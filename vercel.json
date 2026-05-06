@@ -1,0 +1,5 @@
+{
+    "buildCommand": "cd ai_music_teaching && npm install && npm run build",
+    "outputDirectory": "ai_music_teaching/dist",
+    "framework": "umijs"
+}
