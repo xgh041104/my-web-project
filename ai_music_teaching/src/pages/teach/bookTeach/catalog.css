@@ -1,0 +1,134 @@
+.lessonContent {
+  width: 97vw;
+  height: 92vh;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 6vh;
+}
+
+.foldBtn {
+  background: transparent;
+  border: none;
+  padding: .05rem;
+  font-size: .4rem;
+  cursor: pointer;
+}
+
+.face {
+  width: 40vw;
+  height: 88vh;
+  text-align: center;
+}
+
+.face img {
+  height: auto;
+  width: 90%;
+  box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.2);
+}
+
+.pageToolbox button {
+  height: 8.5vh;
+  color: white;
+  background: rgba(255, 255, 255, 0);
+  border: none;
+}
+
+.pageToolbox button:hover {
+  color: rgb(42, 39, 39);
+  border-color: lightgray;
+  font-weight: bolder;
+  background: rgba(255, 255, 255, 0);
+}
+
+.pageToolbox button::before,
+.pageToolbox button::after {
+  box-sizing: border-box;
+  color: white;
+}
+
+
+.pageToolbox button .anticon {
+  font-size: .5rem;
+}
+
+
+.content {
+  border-radius: .2rem;
+  box-shadow: 0 0 .1rem rgba(0, 0, 0, 0.5);
+  width: 60vw;
+  height: 83vh;
+  position: 'relative',
+}
+
+/* 隐藏选中的tab的下划线 */
+.tabs .ant-tabs-ink-bar {
+  display: none;
+}
+
+.tabs .ant-tabs-tab {
+  margin-left: 0;
+  border-right: .02rem solid #3B8DFD;
+  font-size: 0.2rem;
+  color: #3B8DFD;
+  height: .4rem !important;
+  line-height: .4rem;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff;
+  background-color: #3B8DFD;
+  height: .4rem;
+  display: flex;
+  align-items: center;
+}
+
+.tabs .ant-tabs-tab:hover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: .4rem;
+  background: #3B8DFD;
+  color: #fff;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.tabs .ant-tabs-nav-list {
+  background-color: #fff;
+  height: .4rem;
+  border-radius: .1rem;
+  border: 1px solid #3B8DFD;
+}
+
+.tabs .ant-tabs-tab-btn {
+  outline: none;
+  transition: all 0.3s;
+  padding: 0 .1rem;
+  height: .4rem;
+  display: flex;
+  align-items: center;
+}
+
+.tabs .ant-tabs-tab:first-child.ant-tabs-tab-active .ant-tabs-tab-btn {
+  border-radius: .1rem .0rem .0rem .1rem;
+}
+
+.tabs .ant-tabs-tab:last-child.ant-tabs-tab-active .ant-tabs-tab-btn {
+  border-radius: .0rem .1rem .1rem .0rem;
+}
+
+.tabs .ant-tabs-tab:first-child:hover {
+  border-radius: .1rem .0rem .0rem .1rem;
+}
+
+.tabs .ant-tabs-tab:last-child:hover {
+  border-radius: .0rem .1rem .1rem .0rem;
+}
+
+.tabs .ant-tabs-tab:last-child {
+  border-right: none !important;
+}

@@ -1,0 +1,52 @@
+.toolbox {
+  margin: 0;
+  right: 0;
+  bottom: 0;
+  width: 1.8rem;
+  height: 10rem;
+  position: fixed;
+  overflow: hidden;
+  background: none;
+  padding: .2rem .2rem 0;
+  transform: translateX(1.1rem);
+  transition: transform .3s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toolbox.active {
+  transform: translateX(0);
+}
+
+.foldBtn {
+  width: 2rem;
+  height: 22%;
+  border-top-left-radius: .1rem;
+  border-bottom-left-radius: .1rem;
+  background: white;
+  box-shadow: 0 0 .1rem rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+.boxContent {
+  /* margin: 0; */
+  width: 100%;
+  height: 85%;
+  border-top-left-radius: .1rem;
+  border-bottom-left-radius: .1rem;
+
+  background: rgba(0, 0, 0, 0.41);
+  box-shadow:
+    0.05rem 0.05rem .1rem rgba(0, 0, 0, 0.3),
+    -0.05rem 0.05rem .1rem rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

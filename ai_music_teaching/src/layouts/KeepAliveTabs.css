@@ -1,0 +1,63 @@
+/* 用来设置tab切换的按钮的样式 */
+.menuTabs {
+  position: absolute;
+  width: 90vw;
+  height: 100%;
+  /* left: 2%; */
+}
+
+.menuTabs>.ant-tabs-nav {
+  border-bottom: 1px solid lightgray;
+  margin-left: .3rem;
+}
+
+.menuTabs>.ant-tabs-nav .ant-tabs-tab {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
+.menuTabs>.ant-tabs-nav .ant-tabs-tab-active {
+  background: white !important;
+  color: black !important;
+}
+
+.menuTabs>.ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: black !important;
+}
+
+.menuTabs>.ant-tabs-nav .ant-tabs-tab-btn {
+  font-size: .2rem !important;
+  transition: none;
+}
+
+
+/* 底部的tab切换按钮悬浮态 */
+.ant-tabs-tab:hover {
+  color: black;
+  background-color: white;
+}
+
+/* 底部的tab切换按钮被选中态 */
+.ant-tabs-card>.ant-tabs-nav .ant-tabs-tab-active {
+  color: black;
+  background: white;
+}
+
+/* 底部的tab切换按钮正常态 */
+.ant-tabs-card.ant-tabs-bottom>.ant-tabs-nav .ant-tabs-tab+.ant-tabs-tab {
+  margin-left: 2px;
+  color: white;
+  background: #CDCDCD;
+}
+
+
+.ant-tabs-bottom>.ant-tabs-nav::before {
+  border-bottom: none;
+}
+
+.ant-tabs-tab-btn:focus,
+.ant-tabs-tab-remove:focus,
+.ant-tabs-tab-btn:active,
+.ant-tabs-tab-remove:active {
+  color: black;
+}

@@ -1,0 +1,48 @@
+/* MarkdownRenderer.css */
+.markdown-content {
+  font-family: "Microsoft YaHei", sans-serif;
+  line-height: 1.6;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+.markdown-heading {
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  font-weight: bold;
+}
+
+.markdown-heading.h1 {
+  font-size: 1.8em;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.3em;
+}
+
+.markdown-heading.h2 {
+  font-size: 1.5em;
+}
+
+.markdown-heading.h3 {
+  font-size: 1.3em;
+}
+
+.markdown-paragraph {
+  margin: 1em 0;
+}
+
+.markdown-list {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.code-block {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+  margin: 1.5em 0;
+}

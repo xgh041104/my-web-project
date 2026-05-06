@@ -1,0 +1,120 @@
+.musicTheory-button.ant-btn.ant-btn-button {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background-color: #36363E;
+  margin-right: 0.05rem;
+  border: none;
+  border-radius: 0.05rem;
+  height: 0.43rem;
+  font-size: 0.19rem;
+}
+
+.musicTheory-button.ant-btn.ant-btn-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.03rem solid;
+  border-radius: 0.05rem;
+  border-image: linear-gradient(0deg, rgba(106, 106, 106, 0.3), rgba(255, 255, 255, 0.3)) 2 2;
+}
+
+
+.music-theory-tab .ant-tabs-ink-bar {
+  display: none;
+}
+
+.music-theory-tab .ant-tabs-nav {
+  margin: 0.2rem 0;
+}
+
+.music-theory-tab .ant-tabs-nav::before {
+  border: none;
+}
+
+.music-theory-tab .ant-tabs-tab {
+  margin: 0;
+  font-size: .2rem;
+  background-color: #fff;
+  border-left: .03rem solid #D4D5D5;
+  padding: 0px;
+  height: .4rem;
+  display: flex;
+  align-items: center;
+}
+
+.music-theory-tab .ant-tabs-nav-list {
+  margin-top: 0.05rem;
+  background-color: #fff;
+  height: .4rem;
+  display: flex;
+  border-bottom: none;
+  align-items: center;
+}
+
+.music-theory-tab .ant-tabs-tab-btn {
+  outline: none;
+  transition: all 0.3s;
+  padding: 0 .1rem;
+  margin: 0 .2rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.music-theory-tab .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff;
+  background-color: #FA5B39;
+  border-radius: .07rem;
+}
+
+.music-theory-tab .ant-tabs-tab:first-child {
+  border-left: none !important;
+}
+
+.music-theory-tab .ant-tabs-tab:first-child .ant-tabs-tab-btn {
+  margin-left: 0;
+  padding: 0 .1rem;
+}
+
+.music-theory-select.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background-color: #36363E;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  height: 0.43rem;
+  border-color: #36363E;
+  border-radius: .05rem;
+}
+
+.music-theory-select.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: #36363E;
+}
+
+.music-theory-select .ant-select-arrow {
+  color: #fff;
+  font-size: 0.19rem;
+}
+
+.music-theory-select.ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+  font-size: 0.19rem;
+}
+
+.music-theory-select {
+  margin-right: .1rem;
+}
+
+/*光标*/
+.abcjs-cursor {
+  stroke: red;
+}
+
+/*音符颜色*/
+.noteColor {
+  stroke: red;
+  fill: red;
+}

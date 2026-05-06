@@ -1,0 +1,603 @@
+.circleMetronomeContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding: 0.2rem 15.2px;
+    border-radius: 0.08rem;
+    overflow: hidden;
+    align-items: center;
+}
+
+.metronomeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.15rem;
+    border-bottom: 1px solid #333;
+}
+
+.metronomeTitle {
+    font-size: 0.24rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff4d4f;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.04rem;
+    padding: 0.06rem 0.12rem;
+    cursor: pointer;
+    font-size: 0.14rem;
+    transition: background-color 0.3s;
+}
+
+.closeButton:hover {
+    background-color: #ff7875;
+}
+
+.metronomeTypeSelector {
+    margin-bottom: 0.2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.metronomeTypeSelector p {
+    color: #1890ff;
+    margin-bottom: 0.05rem;
+}
+
+.metronomeTypes {
+    display: flex;
+    gap: 0.1rem;
+    margin-top: 0.1rem;
+}
+
+.metronomeTypeOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 0.6rem;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 0.04rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.metronomeTypeOption:hover {
+    background-color: #2a2a2a;
+}
+
+.metronomeTypeOption.active {
+    border: 1px solid #1890ff;
+}
+
+.metronomeTypeIcon {
+    font-size: 0.24rem;
+    margin-bottom: 0.05rem;
+}
+
+.metronomeContent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100% - 0.4rem);
+    gap: 0.2rem;
+}
+
+.leftPanel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #000000;
+    border-radius: 0.08rem;
+    padding: 0.2rem;
+    overflow: hidden;
+}
+
+.rightPanel {
+    width: 4rem;
+    max-width: 30%;
+    padding: 0.12rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    background-color: #111111;
+    border-radius: 0.08rem;
+    box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.metronomeTypeOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.06rem;
+    padding: 0.08rem;
+    background-color: #222222;
+    border-radius: 0.06rem;
+    margin-bottom: 0.06rem;
+}
+
+.beatTypeItem {
+    display: flex;
+    align-items: center;
+    gap: 0.06rem;
+    padding: 0.02rem 0.06rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.04rem;
+}
+
+.beatTypeColor {
+    width: 0.12rem;
+    height: 0.12rem;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.beatTypeLabel {
+    font-size: 0.12rem;
+    color: #e0e0e0;
+}
+
+.normalBeat {
+    background-color: #1890ff;
+}
+
+.accentBeat {
+    background-color: #faad14;
+}
+
+.firstBeat {
+    background-color: #00b96b;
+}
+
+.metronomeTypeButton {
+    background-color: transparent;
+    color: #888;
+    border: none;
+    font-size: 0.14rem;
+    padding: 0.08rem 0.16rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.metronomeTypeButton.active {
+    color: #fff;
+}
+
+.metronomeTypeButton.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.05rem;
+    left: 0;
+    width: 100%;
+    height: 0.03rem;
+    background-color: currentColor;
+    border-radius: 0.015rem;
+}
+
+.metronomeCanvas {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.controlRow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.06rem;
+    padding: 0.08rem;
+    background-color: #222222;
+    border-radius: 0.06rem;
+    margin-bottom: 0.06rem;
+}
+
+.controlRowHorizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.12rem;
+    padding: 0.08rem;
+    background-color: #222222;
+    border-radius: 0.06rem;
+    margin-bottom: 0.06rem;
+}
+
+.controlColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.08rem;
+    flex: 1;
+}
+
+.controlColumn .sectionTitle {
+    margin-bottom: 0.03rem;
+}
+
+.controlLabel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sectionTitle {
+    font-size: 0.15rem;
+    font-weight: bold;
+    color: #e0e0e0;
+    margin-bottom: 0.06rem;
+}
+
+.bpmControl {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.1rem;
+    margin-bottom: 0.05rem;
+}
+
+.bpmButton {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 0.04rem;
+    width: 0.36rem;
+    height: 0.36rem;
+    font-size: 0.18rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.bpmButton:hover {
+    background-color: #444444;
+}
+
+.bpmInput {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 0.04rem;
+    padding: 0.08rem 0.1rem;
+    text-align: center;
+    font-size: 0.16rem;
+    width: 0.7rem;
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+.bpmInput::-webkit-outer-spin-button,
+.bpmInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.06rem;
+    border-radius: 0.03rem;
+    background: #333333;
+    outline: none;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.18rem;
+    height: 0.18rem;
+    border-radius: 50%;
+    background: #1890ff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.slider::-moz-range-thumb {
+    width: 0.18rem;
+    height: 0.18rem;
+    border-radius: 50%;
+    background: #1890ff;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb:hover {
+    transform: scale(1.1);
+}
+
+.timeSignatureOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.08rem;
+}
+
+.timeSignatureOption {
+    padding: 0.06rem 0.1rem;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 0.04rem;
+    cursor: pointer;
+    font-size: 0.14rem;
+    transition: all 0.3s;
+}
+
+.timeSignatureOption:hover {
+    background-color: #444;
+}
+
+.timeSignatureOption.active {
+    background-color: #1890ff;
+    color: #ffffff;
+    border-color: #1890ff;
+}
+
+.emphasisOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.08rem;
+}
+
+.emphasisOption {
+    padding: 0.06rem 0.1rem;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    border-radius: 0.04rem;
+    cursor: pointer;
+    font-size: 0.14rem;
+    transition: all 0.3s;
+}
+
+.emphasisOption:hover {
+    background-color: #444;
+}
+
+.emphasisOption.active {
+    background-color: #1890ff;
+    color: #ffffff;
+    border-color: #1890ff;
+}
+
+.volumeControl {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.volumeSlider {
+    flex: 1;
+    height: 0.05rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #333;
+    border-radius: 0.05rem;
+    outline: none;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.16rem;
+    height: 0.16rem;
+    border-radius: 50%;
+    background: #1890ff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.volumeSlider::-moz-range-thumb {
+    width: 0.16rem;
+    height: 0.16rem;
+    border-radius: 50%;
+    background: #1890ff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.volumeSlider::-webkit-slider-thumb:hover {
+    background: #40a9ff;
+}
+
+.volumeSlider::-moz-range-thumb:hover {
+    background: #40a9ff;
+}
+
+.volumeValue {
+    min-width: 0.4rem;
+    text-align: center;
+    font-size: 0.14rem;
+    color: #e0e0e0;
+}
+
+.audioToggle {
+    padding: 0.04rem 0.08rem;
+    background-color: #1890ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.04rem;
+    cursor: pointer;
+    font-size: 0.12rem;
+    transition: background 0.3s;
+}
+
+.audioToggle.audioOff {
+    background-color: #666;
+}
+
+.playButton {
+    background-color: #00b96b;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.06rem;
+    padding: 0.12rem 0;
+    font-size: 0.16rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 0.08rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playButton:hover {
+    background-color: #00cc78;
+}
+
+.playButton.stopButton {
+    background-color: #ff4d4f;
+}
+
+.playButton.stopButton:hover {
+    background-color: #ff7875;
+}
+
+.volumeIcon {
+    margin-left: 0.1rem;
+    font-size: 0.16rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.28rem;
+    height: 0.28rem;
+    border-radius: 0.04rem;
+    transition: background-color 0.2s;
+}
+
+.volumeIcon:hover {
+    background-color: #333333;
+}
+
+.instructions {
+    color: #999999;
+    font-size: 0.12rem;
+    line-height: 1.4;
+    margin-top: 0.04rem;
+    margin-bottom: 0;
+    padding: 0.08rem;
+    background-color: #222222;
+    border-radius: 0.06rem;
+    border-left: 0.03rem solid #1890ff;
+}
+
+.instructionsContainer {
+    margin-bottom: 0;
+}
+
+.helpText {
+    margin-top: 0.1rem;
+    padding: 0.1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.06rem;
+    font-size: 0.14rem;
+    color: #999;
+    text-align: center;
+}
+
+.tipText {
+    font-style: italic;
+}
+
+.timeSignatureInput,
+.patternSelect {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 0.04rem;
+    padding: 0.08rem 0.12rem;
+    font-size: 0.14rem;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.08rem center;
+    background-size: 0.16rem;
+    cursor: pointer;
+}
+
+.timeSignatureInput:focus,
+.patternSelect:focus {
+    outline: none;
+    border-color: #1890ff;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 7.68rem) {
+    .metronomeContent {
+        flex-direction: column;
+    }
+
+    .rightPanel {
+        width: 100%;
+        max-width: 100%;
+        max-height: 40vh;
+    }
+
+    .leftPanel {
+        height: 60vh;
+    }
+
+    .instructionsContainer {
+        margin-bottom: 0.05rem;
+    }
+}
+
+/* 适配不同的设备像素比 */
+@media screen and (max-resolution: 200dpi) {
+    .rightPanel {
+        font-size: 0.9em;
+    }
+
+    .bpmButton {
+        width: 0.4rem;
+        height: 0.4rem;
+    }
+}
+
+@media screen and (max-resolution: 150dpi) {
+    .rightPanel {
+        width: 4.5rem;
+    }
+}
+
+@media screen and (max-resolution: 125dpi) {
+    .rightPanel {
+        width: 5rem;
+    }
+}
+
+@media screen and (max-resolution: 100dpi) {
+    .rightPanel {
+        width: 5.5rem;
+    }
+}

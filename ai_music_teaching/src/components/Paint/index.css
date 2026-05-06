@@ -1,0 +1,78 @@
+/* 全屏的canvas */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* 背景色不显示 */
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1001;
+  /* 取消用户选择 防止工具栏和canvas被选到 */
+  user-select: none;
+}
+
+
+/* 工具栏排版 */
+.tool-bar {
+  display: flex;
+  flex-direction: column;
+  /* 行间距 */
+  gap: 10px;
+  border-radius: .15rem;
+  width: 800px;
+  height: 110px;
+}
+
+.first-row,
+.second-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.first-row {
+  padding-top: .2rem;
+}
+
+.second-row {
+  margin-right: .05rem;
+}
+
+
+/* 浮动按钮样式 */
+.floatButton {
+  position: absolute;
+  z-index: 1000;
+  font-size: 16px;
+  border: none;
+  background-color: rgba(250, 91, 57, .9);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  bottom: 6%;
+}
+
+
+/* 跟随指针移动的小圆形 */
+.eraser-circle {
+  display: none;
+  position: fixed;
+  border-radius: 50%;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+/* 背景透明 */
+.canvasBackground {
+  background-color: white !important;
+}
+
+
+.btnStyle {
+  border-radius: .1rem;
+}

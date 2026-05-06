@@ -1,0 +1,97 @@
+.floating-button {
+  width: .8rem;
+  height: .8rem;
+  background-color: #FA5B39;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  /* 设置为垂直排列 */
+  align-items: center;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中，这里是为了演示，实际情况下可以去掉 */
+  font-size: .15rem;
+  cursor: pointer;
+  position: fixed;
+  /* 保持悬浮在视图右下角 */
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+
+.menu {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 110px;
+  z-index: 1;
+  transition: transform 0.2s, opacity 0.3s ease;
+  /* 添加动画效果 */
+  transform: scale(0);
+  /* 默认状态下缩小到不可见 */
+  opacity: 0;
+  /* 默认状态下完全透明 */
+  border-radius: 50%;
+}
+
+.menu.show {
+  transform: scale(1);
+  /* 展开时放大到正常大小 */
+  opacity: 1;
+  /* 展开时不透明 */
+}
+
+.menu-items {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item {
+  pointer-events: auto;
+  /* 确保菜单项可以交互 */
+  width: 70px;
+  height: 70px;
+  background-color: #FA5B39;
+  color: #fff;
+  display: none;
+  /* 默认不显示 */
+  flex-direction: column;
+  /* 设置为垂直排列 */
+  align-items: center;
+  /* 水平居中 */
+  justify-content: center;
+  /* 垂直居中 */
+  border-radius: 80%;
+  position: absolute;
+  cursor: pointer;
+
+  transition: transform 0.3s;
+}
+
+
+.floating-button,
+.menu,
+.menu-item {
+  user-select: none;
+  /* 禁用文字选择 */
+  -webkit-user-select: none;
+  /* 对 Webkit 浏览器的兼容 */
+  -moz-user-select: none;
+  /* 对 Firefox 浏览器的兼容 */
+  -ms-user-select: none;
+  /* 对 IE 和 Edge 浏览器的兼容 */
+}
+
+.arcMenu-modal .ant-modal-content {
+  background-color: rgba(0, 0, 0, 0.5);
+}

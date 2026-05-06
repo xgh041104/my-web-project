@@ -1,0 +1,73 @@
+.bookSheet {
+  margin: .3rem;
+  border-radius: .2rem;
+  padding: 0.1rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0.1rem;
+}
+
+.bookSheetContain {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.bookSheetContent {
+  width: 80vw;
+  height: 35vh;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.bookFace {
+  width: 2.2rem;
+  height: 3rem;
+  flex: 0, 0, 18%;
+  margin: .1rem .15rem;
+  transition: background;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.bookFace:hover {
+  background: lightgray;
+  color: white;
+}
+
+.bookFace img {
+  height: 95%;
+}
+
+.bookSheetContain button {
+  background: white;
+  border-color: transparent;
+  border: none;
+  font-size: .5rem;
+  width: .8rem;
+  height: .8rem;
+  margin-right: .4rem;
+}
+
+.bookSheetContain .ant-btn,
+.bookSheetContain .ant-btn:hover,
+.bookSheetContain .ant-btn:focus,
+.ant-btn[disabled],
+.ant-btn[disabled]:hover {
+  color: transparent;
+  background: transparent;
+  border-color: transparent;
+  text-shadow: transparent;
+  box-shadow: transparent;
+}
+
+.pageContain .ant-btn:hover,
+.pageContain .ant-btn:focus {
+  background-color: transparent;
+}
+
+
+/* .ant-btn > span {
+  color: white;
+} */

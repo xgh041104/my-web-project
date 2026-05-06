@@ -1,0 +1,66 @@
+.ai-markdown h1 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.ai-markdown h2 {
+    font-size: 1.1em;
+    margin-bottom: 0.4em;
+}
+
+.ai-markdown p {
+    margin: 0.3em 0;
+}
+
+.ai-markdown ul,
+.ai-markdown ol {
+    padding-left: 1.5em;
+    margin: 0.3em 0;
+}
+
+.ai-markdown li {
+    margin-bottom: 0.2em;
+}
+
+.ai-markdown code {
+    background-color: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.ai-markdown pre {
+    background-color: #f8f8f8;
+    padding: 8px 12px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 0.5em 0;
+    font-size: 0.85em;
+}
+
+.ai-markdown a {
+    color: #1677ff;
+    text-decoration: none;
+}
+
+.ai-markdown a:hover {
+    text-decoration: underline;
+}
+
+.ai-markdown blockquote {
+    border-left: 3px solid #ccc;
+    padding-left: 10px;
+    margin: 0.5em 0;
+    color: #666;
+}
+
+.chatInput {
+    top: "1.3rem";
+    margin: "5rem 0 0 4.5rem";
+    height: "4rem";
+    width: "15rem";
+    width: "15rem";
+    font-size: "0.3rem";
+    border-radius: "0.2rem";
+    padding-right: "1.5rem";
+}

@@ -1,0 +1,2713 @@
+{
+    "cats":[
+        {
+            "uuid": "1239-0",
+            "id": 1239,
+            "name": "中国音乐词典分类",
+            "docLibId": 0,
+            "catTypeCode": "CTCAT",
+            "sequence": null,
+            "catsContent": [
+                {
+                    "children": false,
+                    "hasChildren": false,
+                    "icon": "jstree-file",
+                    "childCount": 0,
+                    "id": 180717,
+                    "text": "总类",
+                    "catsContent": []
+                },
+                {
+                    "children": true,
+                    "childCount": 2,
+                    "id": 180718,
+                    "text": "乐律学",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 181721,
+                            "text": "乐学",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 181722,
+                            "text": "律学",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 3,
+                    "id": 180719,
+                    "text": "音乐类型、活动、体裁及创作表演术语",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 181723,
+                            "text": "音乐类型、活动",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 181724,
+                            "text": "音乐体裁",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 181725,
+                            "text": "创作表演术语",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 2,
+                    "id": 181726,
+                    "text": "古代音乐及有关机构、团体、学校",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 181727,
+                            "text": "古代乐名",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 181728,
+                            "text": "制度、职官、机构",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 2,
+                    "id": 181729,
+                    "text": "近代、现代音乐及有关机构、团体、学校",
+                    "catsContent": [
+                        {
+                            "children": true,
+                            "childCount": 3,
+                            "id": 181730,
+                            "text": "作 品",
+                            "catsContent": [
+                                {
+                                    "children": true,
+                                    "childCount": 2,
+                                    "id": 182718,
+                                    "text": "器乐曲",
+                                    "catsContent": [
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 182719,
+                                            "text": "【民族器乐】",
+                                            "catsContent": []
+                                        },
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 182720,
+                                            "text": "【西洋器乐】",
+                                            "catsContent": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182721,
+                                    "text": "歌曲",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182722,
+                                    "text": "歌剧、舞剧、歌舞剧等",
+                                    "catsContent": []
+                                }
+                            ]
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182717,
+                            "text": "机构、团体、学校",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 3,
+                    "id": 182723,
+                    "text": "书刊",
+                    "catsContent": [
+                        {
+                            "children": true,
+                            "childCount": 7,
+                            "id": 182724,
+                            "text": "古代",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182727,
+                                    "text": "先秦",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182728,
+                                    "text": "两汉—南北朝",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182729,
+                                    "text": "隋·唐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182730,
+                                    "text": "宋·元",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182731,
+                                    "text": "明",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182732,
+                                    "text": "清",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182733,
+                                    "text": "诗赋",
+                                    "catsContent": []
+                                }
+                            ]
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182725,
+                            "text": "近代·现代",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182726,
+                            "text": "报刊",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 2,
+                    "id": 182734,
+                    "text": "人物",
+                    "catsContent": [
+                        {
+                            "children": true,
+                            "childCount": 6,
+                            "id": 182741,
+                            "text": "古代",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182743,
+                                    "text": "先秦",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182744,
+                                    "text": "两汉—南北朝",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182745,
+                                    "text": "隋·唐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182746,
+                                    "text": "宋·元",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182747,
+                                    "text": "明",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182748,
+                                    "text": "清",
+                                    "catsContent": []
+                                }
+                            ]
+                        },
+                        {
+                            "children": true,
+                            "childCount": 7,
+                            "id": 182742,
+                            "text": "近代·现代",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182749,
+                                    "text": "理论研究",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182750,
+                                    "text": "作曲、教育、出版",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182751,
+                                    "text": "指挥",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182752,
+                                    "text": "器乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182753,
+                                    "text": "声乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182754,
+                                    "text": "曲艺音乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182755,
+                                    "text": "戏曲音乐",
+                                    "catsContent": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 4,
+                    "id": 182735,
+                    "text": "民歌",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182756,
+                            "text": "歌唱活动",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182757,
+                            "text": "各类民歌",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182758,
+                            "text": "曲目",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182759,
+                            "text": "结构术语",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 2,
+                    "id": 182736,
+                    "text": "民间歌舞",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182760,
+                            "text": "各类民间歌舞",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182761,
+                            "text": "歌舞活动",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 3,
+                    "id": 182737,
+                    "text": "曲艺音乐",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182762,
+                            "text": "曲艺曲种",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182763,
+                            "text": "名词术语",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182764,
+                            "text": "曲艺作品",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 8,
+                    "id": 182738,
+                    "text": "戏曲、词曲音乐",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182765,
+                            "text": "一般术语",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182766,
+                            "text": "戏曲种类",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182767,
+                            "text": "腔调声腔",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182768,
+                            "text": "曲腔结构",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182769,
+                            "text": "词牌曲牌",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182770,
+                            "text": "板式",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182771,
+                            "text": "演唱",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182772,
+                            "text": "器乐",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 5,
+                    "id": 182739,
+                    "text": "器乐",
+                    "catsContent": [
+                        {
+                            "children": true,
+                            "childCount": 7,
+                            "id": 182773,
+                            "text": "乐器",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182778,
+                                    "text": "吹奏乐器",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182779,
+                                    "text": "弹拨乐器",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182780,
+                                    "text": "拉弦乐器",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182781,
+                                    "text": "击弦乐器",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182782,
+                                    "text": "打击乐器",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182783,
+                                    "text": "其他",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 182784,
+                                    "text": "乐器部件",
+                                    "catsContent": []
+                                }
+                            ]
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182774,
+                            "text": "乐种及演奏形式",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182775,
+                            "text": "曲名",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182776,
+                            "text": "术语",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 182777,
+                            "text": "琴派",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": false,
+                    "hasChildren": false,
+                    "icon": "jstree-file",
+                    "childCount": 0,
+                    "id": 182740,
+                    "text": "音乐教育",
+                    "catsContent": []
+                }
+            ]
+        },
+        {
+            "uuid": "4439-0",
+            "id": 4439,
+            "name": "百科分类",
+            "docLibId": 0,
+            "catTypeCode": "BK_CAT",
+            "sequence": null,
+            "catsContent": [
+                {
+                    "children": true,
+                    "childCount": 9,
+                    "id": 186517,
+                    "text": "音乐家",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186577,
+                            "text": "理论",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186578,
+                            "text": "作曲",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186579,
+                            "text": "演奏",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186580,
+                            "text": "声乐",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186581,
+                            "text": "教育",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186582,
+                            "text": "指挥",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 187517,
+                            "text": "戏曲/曲艺",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186717,
+                            "text": "中国古代",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186583,
+                            "text": "其他",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 6,
+                    "id": 186518,
+                    "text": "作品",
+                    "catsContent": [
+                        {
+                            "children": true,
+                            "childCount": 2,
+                            "id": 186533,
+                            "text": "中国传统音乐",
+                            "catsContent": [
+                                {
+                                    "children": true,
+                                    "childCount": 6,
+                                    "id": 187720,
+                                    "text": "民间音乐",
+                                    "catsContent": [
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 187721,
+                                            "text": "民间歌曲",
+                                            "catsContent": []
+                                        },
+                                        {
+                                            "children": true,
+                                            "childCount": 5,
+                                            "id": 187722,
+                                            "text": "民间器乐",
+                                            "catsContent": [
+                                                {
+                                                    "children": false,
+                                                    "hasChildren": false,
+                                                    "icon": "jstree-file",
+                                                    "childCount": 0,
+                                                    "id": 187726,
+                                                    "text": "吹奏乐",
+                                                    "catsContent": []
+                                                },
+                                                {
+                                                    "children": false,
+                                                    "hasChildren": false,
+                                                    "icon": "jstree-file",
+                                                    "childCount": 0,
+                                                    "id": 187727,
+                                                    "text": "拉弦乐",
+                                                    "catsContent": []
+                                                },
+                                                {
+                                                    "children": false,
+                                                    "hasChildren": false,
+                                                    "icon": "jstree-file",
+                                                    "childCount": 0,
+                                                    "id": 187728,
+                                                    "text": "弹拨乐",
+                                                    "catsContent": []
+                                                },
+                                                {
+                                                    "children": false,
+                                                    "hasChildren": false,
+                                                    "icon": "jstree-file",
+                                                    "childCount": 0,
+                                                    "id": 187729,
+                                                    "text": "打击乐",
+                                                    "catsContent": []
+                                                },
+                                                {
+                                                    "children": false,
+                                                    "hasChildren": false,
+                                                    "icon": "jstree-file",
+                                                    "childCount": 0,
+                                                    "id": 187730,
+                                                    "text": "少数民族器乐",
+                                                    "catsContent": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 187723,
+                                            "text": "民间歌舞",
+                                            "catsContent": []
+                                        },
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 187724,
+                                            "text": "民间说唱",
+                                            "catsContent": []
+                                        },
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 187725,
+                                            "text": "民间戏曲",
+                                            "catsContent": []
+                                        },
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 187733,
+                                            "text": "综合性乐种",
+                                            "catsContent": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "children": true,
+                                    "childCount": 2,
+                                    "id": 186546,
+                                    "text": "仪式音乐",
+                                    "catsContent": [
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 187731,
+                                            "text": "宫廷音乐",
+                                            "catsContent": []
+                                        },
+                                        {
+                                            "children": false,
+                                            "hasChildren": false,
+                                            "icon": "jstree-file",
+                                            "childCount": 0,
+                                            "id": 187732,
+                                            "text": "宗教音乐",
+                                            "catsContent": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "children": true,
+                            "childCount": 3,
+                            "id": 186534,
+                            "text": "声乐",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186559,
+                                    "text": "独唱/齐唱",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186560,
+                                    "text": "合唱",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 187917,
+                                    "text": "声乐套曲",
+                                    "catsContent": []
+                                }
+                            ]
+                        },
+                        {
+                            "children": true,
+                            "childCount": 9,
+                            "id": 186535,
+                            "text": "器乐",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186551,
+                                    "text": "钢琴及其他键盘乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186552,
+                                    "text": "管弦乐器独奏",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186553,
+                                    "text": "管弦乐器协奏",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186554,
+                                    "text": "西洋管弦乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186555,
+                                    "text": "室内乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186556,
+                                    "text": "民族乐器独奏",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 187918,
+                                    "text": "民族器乐合奏",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186557,
+                                    "text": "民族乐器协奏",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186558,
+                                    "text": "民族管弦乐",
+                                    "catsContent": []
+                                }
+                            ]
+                        },
+                        {
+                            "children": true,
+                            "childCount": 4,
+                            "id": 186536,
+                            "text": "综合性表演艺术",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186547,
+                                    "text": "歌剧",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186548,
+                                    "text": "舞剧",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186549,
+                                    "text": "音乐剧",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186550,
+                                    "text": "戏剧戏曲",
+                                    "catsContent": []
+                                }
+                            ]
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186537,
+                            "text": "世界民族音乐",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 187919,
+                            "text": "其他",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 2,
+                    "id": 186519,
+                    "text": "乐器",
+                    "catsContent": [
+                        {
+                            "children": true,
+                            "childCount": 5,
+                            "id": 186527,
+                            "text": "中国乐器",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186529,
+                                    "text": "吹管",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186530,
+                                    "text": "拉弦",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186531,
+                                    "text": "弹拨",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186532,
+                                    "text": "打击",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186561,
+                                    "text": "其他",
+                                    "catsContent": []
+                                }
+                            ]
+                        },
+                        {
+                            "children": true,
+                            "childCount": 7,
+                            "id": 186528,
+                            "text": "外国乐器",
+                            "catsContent": [
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186562,
+                                    "text": "钢琴及其他键盘乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186563,
+                                    "text": "弦乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186564,
+                                    "text": "木管",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186565,
+                                    "text": "铜管",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186566,
+                                    "text": "打击乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186567,
+                                    "text": "世界民族音乐",
+                                    "catsContent": []
+                                },
+                                {
+                                    "children": false,
+                                    "hasChildren": false,
+                                    "icon": "jstree-file",
+                                    "childCount": 0,
+                                    "id": 186568,
+                                    "text": "其他",
+                                    "catsContent": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "children": true,
+                    "childCount": 8,
+                    "id": 186520,
+                    "text": "术语",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186569,
+                            "text": "乐理",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186570,
+                            "text": "体裁/乐种",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186571,
+                            "text": "风格/流派",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186572,
+                            "text": "表情术语",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 187519,
+                            "text": "乐器部件",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 187520,
+                            "text": "音乐教育",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 187521,
+                            "text": "职官",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 187522,
+                            "text": "其他",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": false,
+                    "hasChildren": false,
+                    "icon": "jstree-file",
+                    "childCount": 0,
+                    "id": 186523,
+                    "text": "音乐活动",
+                    "catsContent": []
+                },
+                {
+                    "children": true,
+                    "childCount": 3,
+                    "id": 186525,
+                    "text": "书刊/专辑",
+                    "catsContent": [
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186917,
+                            "text": "图书/乐谱",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 186918,
+                            "text": "音像专辑",
+                            "catsContent": []
+                        },
+                        {
+                            "children": false,
+                            "hasChildren": false,
+                            "icon": "jstree-file",
+                            "childCount": 0,
+                            "id": 187523,
+                            "text": "期刊/报纸",
+                            "catsContent": []
+                        }
+                    ]
+                },
+                {
+                    "children": false,
+                    "hasChildren": false,
+                    "icon": "jstree-file",
+                    "childCount": 0,
+                    "id": 186526,
+                    "text": "机构组织",
+                    "catsContent": []
+                }
+            ]
+        }
+    ],
+    "treeData": [
+        {
+            "id": 1239,
+            
+            "pId": 0,
+            "value": "中国音乐词典分类",
+            "title": "中国音乐词典分类",
+            "isLeaf": false
+        },
+        {
+            "id": 180717,
+            
+            "pId": 1239,
+            "title": "总类",
+            "isLeaf": true
+        },
+        {
+            "id": 180718,
+            
+            "pId": 1239,
+            "value": "乐律学",
+            "title": "乐律学",
+            "isLeaf": false
+        },
+        {
+            "id": 181721,
+            
+            "pId": 180718,
+            "value": "乐学",
+            "title": "乐学",
+            "isLeaf": true
+        },
+        {
+            "id": 181722,
+            
+            "pId": 180718,
+            "value": "律学",
+            "title": "律学",
+            "isLeaf": true
+        },
+        {
+            "id": 180719,
+            
+            "pId": 1239,
+            "value": "音乐类型、活动、体裁及创作表演术语",
+            "title": "音乐类型、活动、体裁及创作表演术语",
+            "isLeaf": false
+        },
+        {
+            "id": 181723,
+            
+            "pId": 180719,
+            "value": "音乐类型、活动",
+            "title": "音乐类型、活动",
+            "isLeaf": true
+        },
+        {
+            "id": 181724,
+            
+            "pId": 180719,
+            "value": "音乐体裁",
+            "title": "音乐体裁",
+            "isLeaf": true
+        },
+        {
+            "id": 181725,
+            
+            "pId": 180719,
+            "value": "创作表演术语",
+            "title": "创作表演术语",
+            "isLeaf": true
+        },
+        {
+            "id": 181726,
+            
+            "pId": 1239,
+            "value": "古代音乐及有关机构、团体、学校",
+            "title": "古代音乐及有关机构、团体、学校",
+            "isLeaf": false
+        },
+        {
+            "id": 181727,
+            
+            "pId": 181726,
+            "value": "古代乐名",
+            "title": "古代乐名",
+            "isLeaf": true
+        },
+        {
+            "id": 181728,
+            
+            "pId": 181726,
+            "value": "制度、职官、机构",
+            "title": "制度、职官、机构",
+            "isLeaf": true
+        },
+        {
+            "id": 181729,
+            
+            "pId": 1239,
+            "value": "近代、现代音乐及有关机构、团体、学校",
+            "title": "近代、现代音乐及有关机构、团体、学校",
+            "isLeaf": false
+        },
+        {
+            "id": 181730,
+            
+            "pId": 181729,
+            "value": "作 品",
+            "title": "作 品",
+            "isLeaf": false
+        },
+        {
+            "id": 182718,
+            
+            "pId": 181730,
+            "value": "器乐曲",
+            "title": "器乐曲",
+            "isLeaf": false
+        },
+        {
+            "id": 182719,
+            
+            "pId": 182718,
+            "value": "【民族器乐】",
+            "title": "【民族器乐】",
+            "isLeaf": true
+        },
+        {
+            "id": 182720,
+            
+            "pId": 182718,
+            "value": "【西洋器乐】",
+            "title": "【西洋器乐】",
+            "isLeaf": true
+        },
+        {
+            "id": 182721,
+            
+            "pId": 181730,
+            "value": "歌曲",
+            "title": "歌曲",
+            "isLeaf": true
+        },
+        {
+            "id": 182722,
+            
+            "pId": 181730,
+            "value": "歌剧、舞剧、歌舞剧等",
+            "title": "歌剧、舞剧、歌舞剧等",
+            "isLeaf": true
+        },
+        {
+            "id": 182717,
+            
+            "pId": 181729,
+            "value": "机构、团体、学校",
+            "title": "机构、团体、学校",
+            "isLeaf": true
+        },
+        {
+            "id": 182723,
+            
+            "pId": 1239,
+            "value": "书刊",
+            "title": "书刊",
+            "isLeaf": false
+        },
+        {
+            "id": 182724,
+            
+            "pId": 182723,
+            "value": "古代",
+            "title": "古代",
+            "isLeaf": false
+        },
+        {
+            "id": 182727,
+            
+            "pId": 182724,
+            "value": "先秦",
+            "title": "先秦",
+            "isLeaf": true
+        },
+        {
+            "id": 182728,
+            
+            "pId": 182724,
+            "value": "两汉—南北朝",
+            "title": "两汉—南北朝",
+            "isLeaf": true
+        },
+        {
+            "id": 182729,
+            
+            "pId": 182724,
+            "value": "隋·唐",
+            "title": "隋·唐",
+            "isLeaf": true
+        },
+        {
+            "id": 182730,
+            
+            "pId": 182724,
+            "value": "宋·元",
+            "title": "宋·元",
+            "isLeaf": true
+        },
+        {
+            "id": 182731,
+            
+            "pId": 182724,
+            "value": "明",
+            "title": "明",
+            "isLeaf": true
+        },
+        {
+            "id": 182732,
+            
+            "pId": 182724,
+            "value": "清",
+            "title": "清",
+            "isLeaf": true
+        },
+        {
+            "id": 182733,
+            
+            "pId": 182724,
+            "value": "诗赋",
+            "title": "诗赋",
+            "isLeaf": true
+        },
+        {
+            "id": 182725,
+            
+            "pId": 182723,
+            "value": "近代·现代",
+            "title": "近代·现代",
+            "isLeaf": true
+        },
+        {
+            "id": 182726,
+            
+            "pId": 182723,
+            "value": "报刊",
+            "title": "报刊",
+            "isLeaf": true
+        },
+        {
+            "id": 182734,
+            
+            "pId": 1239,
+            "value": "人物",
+            "title": "人物",
+            "isLeaf": false
+        },
+        {
+            "id": 182741,
+            
+            "pId": 182734,
+            "value": "古代",
+            "title": "古代",
+            "isLeaf": false
+        },
+        {
+            "id": 182743,
+            
+            "pId": 182741,
+            "value": "先秦",
+            "title": "先秦",
+            "isLeaf": true
+        },
+        {
+            "id": 182744,
+            
+            "pId": 182741,
+            "value": "两汉—南北朝",
+            "title": "两汉—南北朝",
+            "isLeaf": true
+        },
+        {
+            "id": 182745,
+            
+            "pId": 182741,
+            "value": "隋·唐",
+            "title": "隋·唐",
+            "isLeaf": true
+        },
+        {
+            "id": 182746,
+            
+            "pId": 182741,
+            "value": "宋·元",
+            "title": "宋·元",
+            "isLeaf": true
+        },
+        {
+            "id": 182747,
+            
+            "pId": 182741,
+            "value": "明",
+            "title": "明",
+            "isLeaf": true
+        },
+        {
+            "id": 182748,
+            
+            "pId": 182741,
+            "value": "清",
+            "title": "清",
+            "isLeaf": true
+        },
+        {
+            "id": 182742,
+            
+            "pId": 182734,
+            "value": "近代·现代",
+            "title": "近代·现代",
+            "isLeaf": false
+        },
+        {
+            "id": 182749,
+            
+            "pId": 182742,
+            "value": "理论研究",
+            "title": "理论研究",
+            "isLeaf": true
+        },
+        {
+            "id": 182750,
+            
+            "pId": 182742,
+            "value": "作曲、教育、出版",
+            "title": "作曲、教育、出版",
+            "isLeaf": true
+        },
+        {
+            "id": 182751,
+            
+            "pId": 182742,
+            "value": "指挥",
+            "title": "指挥",
+            "isLeaf": true
+        },
+        {
+            "id": 182752,
+            
+            "pId": 182742,
+            "value": "器乐",
+            "title": "器乐",
+            "isLeaf": true
+        },
+        {
+            "id": 182753,
+            
+            "pId": 182742,
+            "value": "声乐",
+            "title": "声乐",
+            "isLeaf": true
+        },
+        {
+            "id": 182754,
+            
+            "pId": 182742,
+            "value": "曲艺音乐",
+            "title": "曲艺音乐",
+            "isLeaf": true
+        },
+        {
+            "id": 182755,
+            
+            "pId": 182742,
+            "value": "戏曲音乐",
+            "title": "戏曲音乐",
+            "isLeaf": true
+        },
+        {
+            "id": 182735,
+            
+            "pId": 1239,
+            "value": "民歌",
+            "title": "民歌",
+            "isLeaf": false
+        },
+        {
+            "id": 182756,
+            
+            "pId": 182735,
+            "value": "歌唱活动",
+            "title": "歌唱活动",
+            "isLeaf": true
+        },
+        {
+            "id": 182757,
+            
+            "pId": 182735,
+            "value": "各类民歌",
+            "title": "各类民歌",
+            "isLeaf": true
+        },
+        {
+            "id": 182758,
+            
+            "pId": 182735,
+            "value": "曲目",
+            "title": "曲目",
+            "isLeaf": true
+        },
+        {
+            "id": 182759,
+            
+            "pId": 182735,
+            "value": "结构术语",
+            "title": "结构术语",
+            "isLeaf": true
+        },
+        {
+            "id": 182736,
+            
+            "pId": 1239,
+            "value": "民间歌舞",
+            "title": "民间歌舞",
+            "isLeaf": false
+        },
+        {
+            "id": 182760,
+            
+            "pId": 182736,
+            "value": "各类民间歌舞",
+            "title": "各类民间歌舞",
+            "isLeaf": true
+        },
+        {
+            "id": 182761,
+            
+            "pId": 182736,
+            "value": "歌舞活动",
+            "title": "歌舞活动",
+            "isLeaf": true
+        },
+        {
+            "id": 182737,
+            
+            "pId": 1239,
+            "value": "曲艺音乐",
+            "title": "曲艺音乐",
+            "isLeaf": false
+        },
+        {
+            "id": 182762,
+            
+            "pId": 182737,
+            "value": "曲艺曲种",
+            "title": "曲艺曲种",
+            "isLeaf": true
+        },
+        {
+            "id": 182763,
+            
+            "pId": 182737,
+            "value": "名词术语",
+            "title": "名词术语",
+            "isLeaf": true
+        },
+        {
+            "id": 182764,
+            
+            "pId": 182737,
+            "value": "曲艺作品",
+            "title": "曲艺作品",
+            "isLeaf": true
+        },
+        {
+            "id": 182738,
+            
+            "pId": 1239,
+            "value": "戏曲、词曲音乐",
+            "title": "戏曲、词曲音乐",
+            "isLeaf": false
+        },
+        {
+            "id": 182765,
+            
+            "pId": 182738,
+            "value": "一般术语",
+            "title": "一般术语",
+            "isLeaf": true
+        },
+        {
+            "id": 182766,
+            
+            "pId": 182738,
+            "value": "戏曲种类",
+            "title": "戏曲种类",
+            "isLeaf": true
+        },
+        {
+            "id": 182767,
+            
+            "pId": 182738,
+            "value": "腔调声腔",
+            "title": "腔调声腔",
+            "isLeaf": true
+        },
+        {
+            "id": 182768,
+            
+            "pId": 182738,
+            "value": "曲腔结构",
+            "title": "曲腔结构",
+            "isLeaf": true
+        },
+        {
+            "id": 182769,
+            
+            "pId": 182738,
+            "value": "词牌曲牌",
+            "title": "词牌曲牌",
+            "isLeaf": true
+        },
+        {
+            "id": 182770,
+            
+            "pId": 182738,
+            "value": "板式",
+            "title": "板式",
+            "isLeaf": true
+        },
+        {
+            "id": 182771,
+            
+            "pId": 182738,
+            "value": "演唱",
+            "title": "演唱",
+            "isLeaf": true
+        },
+        {
+            "id": 182772,
+            
+            "pId": 182738,
+            "value": "器乐",
+            "title": "器乐",
+            "isLeaf": true
+        },
+        {
+            "id": 182739,
+            
+            "pId": 1239,
+            "value": "器乐",
+            "title": "器乐",
+            "isLeaf": false
+        },
+        {
+            "id": 182773,
+            
+            "pId": 182739,
+            "value": "乐器",
+            "title": "乐器",
+            "isLeaf": false
+        },
+        {
+            "id": 182778,
+            
+            "pId": 182773,
+            "value": "吹奏乐器",
+            "title": "吹奏乐器",
+            "isLeaf": true
+        },
+        {
+            "id": 182779,
+            
+            "pId": 182773,
+            "value": "弹拨乐器",
+            "title": "弹拨乐器",
+            "isLeaf": true
+        },
+        {
+            "id": 182780,
+            
+            "pId": 182773,
+            "value": "拉弦乐器",
+            "title": "拉弦乐器",
+            "isLeaf": true
+        },
+        {
+            "id": 182781,
+            
+            "pId": 182773,
+            "value": "击弦乐器",
+            "title": "击弦乐器",
+            "isLeaf": true
+        },
+        {
+            "id": 182782,
+            
+            "pId": 182773,
+            "value": "打击乐器",
+            "title": "打击乐器",
+            "isLeaf": true
+        },
+        {
+            "id": 182783,
+            
+            "pId": 182773,
+            "value": "其他",
+            "title": "其他",
+            "isLeaf": true
+        },
+        {
+            "id": 182784,
+            
+            "pId": 182773,
+            "value": "乐器部件",
+            "title": "乐器部件",
+            "isLeaf": true
+        },
+        {
+            "id": 182774,
+            
+            "pId": 182739,
+            "value": "乐种及演奏形式",
+            "title": "乐种及演奏形式",
+            "isLeaf": true
+        },
+        {
+            "id": 182775,
+            
+            "pId": 182739,
+            "value": "曲名",
+            "title": "曲名",
+            "isLeaf": true
+        },
+        {
+            "id": 182776,
+            
+            "pId": 182739,
+            "value": "术语",
+            "title": "术语",
+            "isLeaf": true
+        },
+        {
+            "id": 182777,
+            
+            "pId": 182739,
+            "value": "琴派",
+            "title": "琴派",
+            "isLeaf": true
+        },
+        {
+            "id": 182740,
+            
+            "pId": 1239,
+            "value": "音乐教育",
+            "title": "音乐教育",
+            "isLeaf": true
+        },
+        {
+            "id": 4439,
+            
+            "pId": 0,
+            "value": "百科分类",
+            "title": "百科分类",
+            "isLeaf": false
+        },
+        {
+            "id": 186517,
+            
+            "pId": 4439,
+            "value": "音乐家",
+            "title": "音乐家",
+            "isLeaf": false
+        },
+        {
+            "id": 186577,
+            
+            "pId": 186517,
+            "value": "理论",
+            "title": "理论",
+            "isLeaf": true
+        },
+        {
+            "id": 186578,
+            
+            "pId": 186517,
+            "value": "作曲",
+            "title": "作曲",
+            "isLeaf": true
+        },
+        {
+            "id": 186579,
+            
+            "pId": 186517,
+            "value": "演奏",
+            "title": "演奏",
+            "isLeaf": true
+        },
+        {
+            "id": 186580,
+            
+            "pId": 186517,
+            "value": "声乐",
+            "title": "声乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186581,
+            
+            "pId": 186517,
+            "value": "教育",
+            "title": "教育",
+            "isLeaf": true
+        },
+        {
+            "id": 186582,
+            
+            "pId": 186517,
+            "value": "指挥",
+            "title": "指挥",
+            "isLeaf": true
+        },
+        {
+            "id": 187517,
+            
+            "pId": 186517,
+            "value": "戏曲/曲艺",
+            "title": "戏曲/曲艺",
+            "isLeaf": true
+        },
+        {
+            "id": 186717,
+            
+            "pId": 186517,
+            "value": "中国古代",
+            "title": "中国古代",
+            "isLeaf": true
+        },
+        {
+            "id": 186583,
+            
+            "pId": 186517,
+            "value": "其他",
+            "title": "其他",
+            "isLeaf": true
+        },
+        {
+            "id": 186518,
+            
+            "pId": 4439,
+            "value": "作品",
+            "title": "作品",
+            "isLeaf": false
+        },
+        {
+            "id": 186533,
+            
+            "pId": 186518,
+            "value": "中国传统音乐",
+            "title": "中国传统音乐",
+            "isLeaf": false
+        },
+        {
+            "id": 187720,
+            
+            "pId": 186533,
+            "value": "民间音乐",
+            "title": "民间音乐",
+            "isLeaf": false
+        },
+        {
+            "id": 187721,
+            
+            "pId": 187720,
+            "value": "民间歌曲",
+            "title": "民间歌曲",
+            "isLeaf": true
+        },
+        {
+            "id": 187722,
+            
+            "pId": 187720,
+            "value": "民间器乐",
+            "title": "民间器乐",
+            "isLeaf": false
+        },
+        {
+            "id": 187726,
+            
+            "pId": 187722,
+            "value": "吹奏乐",
+            "title": "吹奏乐",
+            "isLeaf": true
+        },
+        {
+            "id": 187727,
+            
+            "pId": 187722,
+            "value": "拉弦乐",
+            "title": "拉弦乐",
+            "isLeaf": true
+        },
+        {
+            "id": 187728,
+            
+            "pId": 187722,
+            "value": "弹拨乐",
+            "title": "弹拨乐",
+            "isLeaf": true
+        },
+        {
+            "id": 187729,
+            
+            "pId": 187722,
+            "value": "打击乐",
+            "title": "打击乐",
+            "isLeaf": true
+        },
+        {
+            "id": 187730,
+            
+            "pId": 187722,
+            "value": "少数民族器乐",
+            "title": "少数民族器乐",
+            "isLeaf": true
+        },
+        {
+            "id": 187723,
+            
+            "pId": 187720,
+            "value": "民间歌舞",
+            "title": "民间歌舞",
+            "isLeaf": true
+        },
+        {
+            "id": 187724,
+            
+            "pId": 187720,
+            "value": "民间说唱",
+            "title": "民间说唱",
+            "isLeaf": true
+        },
+        {
+            "id": 187725,
+            
+            "pId": 187720,
+            "value": "民间戏曲",
+            "title": "民间戏曲",
+            "isLeaf": true
+        },
+        {
+            "id": 187733,
+            
+            "pId": 187720,
+            "value": "综合性乐种",
+            "title": "综合性乐种",
+            "isLeaf": true
+        },
+        {
+            "id": 186546,
+            
+            "pId": 186533,
+            "value": "仪式音乐",
+            "title": "仪式音乐",
+            "isLeaf": false
+        },
+        {
+            "id": 187731,
+            
+            "pId": 186546,
+            "value": "宫廷音乐",
+            "title": "宫廷音乐",
+            "isLeaf": true
+        },
+        {
+            "id": 187732,
+            
+            "pId": 186546,
+            "value": "宗教音乐",
+            "title": "宗教音乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186534,
+            
+            "pId": 186518,
+            "value": "声乐",
+            "title": "声乐",
+            "isLeaf": false
+        },
+        {
+            "id": 186559,
+            
+            "pId": 186534,
+            "value": "独唱/齐唱",
+            "title": "独唱/齐唱",
+            "isLeaf": true
+        },
+        {
+            "id": 186560,
+            
+            "pId": 186534,
+            "value": "合唱",
+            "title": "合唱",
+            "isLeaf": true
+        },
+        {
+            "id": 187917,
+            
+            "pId": 186534,
+            "value": "声乐套曲",
+            "title": "声乐套曲",
+            "isLeaf": true
+        },
+        {
+            "id": 186535,
+            
+            "pId": 186518,
+            "value": "器乐",
+            "title": "器乐",
+            "isLeaf": false
+        },
+        {
+            "id": 186551,
+            
+            "pId": 186535,
+            "value": "钢琴及其他键盘乐",
+            "title": "钢琴及其他键盘乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186552,
+            
+            "pId": 186535,
+            "value": "管弦乐器独奏",
+            "title": "管弦乐器独奏",
+            "isLeaf": true
+        },
+        {
+            "id": 186553,
+            
+            "pId": 186535,
+            "value": "管弦乐器协奏",
+            "title": "管弦乐器协奏",
+            "isLeaf": true
+        },
+        {
+            "id": 186554,
+            
+            "pId": 186535,
+            "value": "西洋管弦乐",
+            "title": "西洋管弦乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186555,
+            
+            "pId": 186535,
+            "value": "室内乐",
+            "title": "室内乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186556,
+            
+            "pId": 186535,
+            "value": "民族乐器独奏",
+            "title": "民族乐器独奏",
+            "isLeaf": true
+        },
+        {
+            "id": 187918,
+            
+            "pId": 186535,
+            "value": "民族器乐合奏",
+            "title": "民族器乐合奏",
+            "isLeaf": true
+        },
+        {
+            "id": 186557,
+            
+            "pId": 186535,
+            "value": "民族乐器协奏",
+            "title": "民族乐器协奏",
+            "isLeaf": true
+        },
+        {
+            "id": 186558,
+            
+            "pId": 186535,
+            "value": "民族管弦乐",
+            "title": "民族管弦乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186536,
+            
+            "pId": 186518,
+            "value": "综合性表演艺术",
+            "title": "综合性表演艺术",
+            "isLeaf": false
+        },
+        {
+            "id": 186547,
+            
+            "pId": 186536,
+            "value": "歌剧",
+            "title": "歌剧",
+            "isLeaf": true
+        },
+        {
+            "id": 186548,
+            
+            "pId": 186536,
+            "value": "舞剧",
+            "title": "舞剧",
+            "isLeaf": true
+        },
+        {
+            "id": 186549,
+            
+            "pId": 186536,
+            "value": "音乐剧",
+            "title": "音乐剧",
+            "isLeaf": true
+        },
+        {
+            "id": 186550,
+            
+            "pId": 186536,
+            "value": "戏剧戏曲",
+            "title": "戏剧戏曲",
+            "isLeaf": true
+        },
+        {
+            "id": 186537,
+            
+            "pId": 186518,
+            "value": "世界民族音乐",
+            "title": "世界民族音乐",
+            "isLeaf": true
+        },
+        {
+            "id": 187919,
+            
+            "pId": 186518,
+            "value": "其他",
+            "title": "其他",
+            "isLeaf": true
+        },
+        {
+            "id": 186519,
+            
+            "pId": 4439,
+            "value": "乐器",
+            "title": "乐器",
+            "isLeaf": false
+        },
+        {
+            "id": 186527,
+            
+            "pId": 186519,
+            "value": "中国乐器",
+            "title": "中国乐器",
+            "isLeaf": false
+        },
+        {
+            "id": 186529,
+            
+            "pId": 186527,
+            "value": "吹管",
+            "title": "吹管",
+            "isLeaf": true
+        },
+        {
+            "id": 186530,
+            
+            "pId": 186527,
+            "value": "拉弦",
+            "title": "拉弦",
+            "isLeaf": true
+        },
+        {
+            "id": 186531,
+            
+            "pId": 186527,
+            "value": "弹拨",
+            "title": "弹拨",
+            "isLeaf": true
+        },
+        {
+            "id": 186532,
+            
+            "pId": 186527,
+            "value": "打击",
+            "title": "打击",
+            "isLeaf": true
+        },
+        {
+            "id": 186561,
+            
+            "pId": 186527,
+            "value": "其他",
+            "title": "其他",
+            "isLeaf": true
+        },
+        {
+            "id": 186528,
+            
+            "pId": 186519,
+            "value": "外国乐器",
+            "title": "外国乐器",
+            "isLeaf": false
+        },
+        {
+            "id": 186562,
+            
+            "pId": 186528,
+            "value": "钢琴及其他键盘乐",
+            "title": "钢琴及其他键盘乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186563,
+            
+            "pId": 186528,
+            "value": "弦乐",
+            "title": "弦乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186564,
+            
+            "pId": 186528,
+            "value": "木管",
+            "title": "木管",
+            "isLeaf": true
+        },
+        {
+            "id": 186565,
+            
+            "pId": 186528,
+            "value": "铜管",
+            "title": "铜管",
+            "isLeaf": true
+        },
+        {
+            "id": 186566,
+            
+            "pId": 186528,
+            "value": "打击乐",
+            "title": "打击乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186567,
+            
+            "pId": 186528,
+            "value": "世界民族音乐",
+            "title": "世界民族音乐",
+            "isLeaf": true
+        },
+        {
+            "id": 186568,
+            
+            "pId": 186528,
+            "value": "其他",
+            "title": "其他",
+            "isLeaf": true
+        },
+        {
+            "id": 186520,
+            
+            "pId": 4439,
+            "value": "术语",
+            "title": "术语",
+            "isLeaf": false
+        },
+        {
+            "id": 186569,
+            
+            "pId": 186520,
+            "value": "乐理",
+            "title": "乐理",
+            "isLeaf": true
+        },
+        {
+            "id": 186570,
+            
+            "pId": 186520,
+            "value": "体裁/乐种",
+            "title": "体裁/乐种",
+            "isLeaf": true
+        },
+        {
+            "id": 186571,
+            
+            "pId": 186520,
+            "value": "风格/流派",
+            "title": "风格/流派",
+            "isLeaf": true
+        },
+        {
+            "id": 186572,
+            
+            "pId": 186520,
+            "value": "表情术语",
+            "title": "表情术语",
+            "isLeaf": true
+        },
+        {
+            "id": 187519,
+            
+            "pId": 186520,
+            "value": "乐器部件",
+            "title": "乐器部件",
+            "isLeaf": true
+        },
+        {
+            "id": 187520,
+            
+            "pId": 186520,
+            "value": "音乐教育",
+            "title": "音乐教育",
+            "isLeaf": true
+        },
+        {
+            "id": 187521,
+            
+            "pId": 186520,
+            "value": "职官",
+            "title": "职官",
+            "isLeaf": true
+        },
+        {
+            "id": 187522,
+            
+            "pId": 186520,
+            "value": "其他",
+            "title": "其他",
+            "isLeaf": true
+        },
+        {
+            "id": 186523,
+            
+            "pId": 4439,
+            "value": "音乐活动",
+            "title": "音乐活动",
+            "isLeaf": true
+        },
+        {
+            "id": 186525,
+            
+            "pId": 4439,
+            "value": "书刊/专辑",
+            "title": "书刊/专辑",
+            "isLeaf": false
+        },
+        {
+            "id": 186917,
+            
+            "pId": 186525,
+            "value": "图书/乐谱",
+            "title": "图书/乐谱",
+            "isLeaf": true
+        },
+        {
+            "id": 186918,
+            
+            "pId": 186525,
+            "value": "音像专辑",
+            "title": "音像专辑",
+            "isLeaf": true
+        },
+        {
+            "id": 187523,
+            
+            "pId": 186525,
+            "value": "期刊/报纸",
+            "title": "期刊/报纸",
+            "isLeaf": true
+        },
+        {
+            "id": 186526,
+            
+            "pId": 4439,
+            "value": "机构组织",
+            "title": "机构组织",
+            "isLeaf": true
+        }
+    ]
+}

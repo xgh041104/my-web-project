@@ -1,0 +1,98 @@
+.moduleList {
+  height: 80vh;
+  display: flex;
+  align-items: start;
+  align-content: start;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin: .2rem 1.5rem;
+}
+
+.moduleBtn {
+  height: 20vh;
+  width: 4.5rem;
+  background: #4ACF7E;
+  font-size: .2rem;
+  color: #FFFFFF;
+  flex: 0 0 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px .1rem 1px rgba(0, 0, 0, 0.26);
+  margin: .15rem;
+  border-radius: .15rem;
+}
+
+.moduleLists {
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  margin: .2rem 1.5rem;
+}
+
+.moduleBtns {
+  height: 50vh;
+  width: 2.7rem;
+  background: #4ACF7E;
+  font-size: .2rem;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 0px 0px .1rem 1px rgba(0, 0, 0, 0.26);
+  margin: .15rem;
+  border-radius: .15rem;
+}
+
+.ant-btn:hover,
+.ant-btn:focus {
+  color: rgb(42, 39, 39);
+  border-color: lightgray;
+  font-weight: bolder;
+  background: #fff;
+}
+
+.moduleBtn span {
+  font-size: 1rem;
+}
+
+.moduleBtn p {
+  color: gray;
+}
+
+
+
+.card-title {
+  text-align: left;
+  font-size: large;
+  font-weight: '500';
+  margin-bottom: .1rem;
+  margin-left: -.1rem;
+}
+
+.card-titles {
+  text-align: center;
+  font-size: .36rem;
+  font-weight: 500;
+  margin-bottom: .2rem;
+}
+
+.card-desc {
+  text-align: left;
+  height: '.2rem';
+  width: '.2rem';
+  margin-left: -.1rem;
+}
+
+.card-descs {
+  text-align: center;
+  font-size: .23rem;
+  height: '.2rem';
+  width: '.2rem';
+  margin-bottom: 1rem;
+}
+
+.arcMenu-modal .ant-modal-content {
+  background-color: rgba(0, 0, 0, 0.5);
+}

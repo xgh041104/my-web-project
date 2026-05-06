@@ -1,0 +1,59 @@
+/*兼容windows系统显示缩放200%以内*/
+@media screen and (max-width: 1920px) and (max-resolution: 200dpi){
+    html {
+        font-size: 53.5px;
+    }
+    
+    body {
+        min-width: 1024px;
+        overflow: hidden;
+    }
+}
+
+/*兼容windows系统显示缩放150%*/
+@media screen and (max-width: 1920px) and (max-resolution: 150dpi){
+    html {
+        font-size: 62.9px;
+    }
+    
+    body {
+        min-width: 1024px;
+        overflow: hidden;
+    }
+}
+/*兼容windows系统显示缩放125%*/
+@media screen and (max-width: 1920px) and (max-resolution: 125dpi){
+    html {
+        font-size: 76px ;
+    }
+    
+    body {
+        min-width: 1200px;
+        overflow: hidden;
+    }
+}
+/*兼容windows系统显示缩放100%*/
+@media screen and (max-width: 1920px) and (max-resolution: 100dpi){
+    html {
+        font-size: 100px ; 
+    }
+    
+    body {
+        min-width: 1400px;
+        overflow: hidden;
+    }
+}
+
+/* ipad和小屏幕兼容 */
+@media screen and (max-width: 1180px) and (max-resolution: 100dpi) {
+    html{
+        font-size: 80px;
+    }
+    body {
+        min-width: 1024px;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
