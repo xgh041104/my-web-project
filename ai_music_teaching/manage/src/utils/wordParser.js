@@ -1,13 +1,12 @@
 import mammoth from 'mammoth';
 
 export const parseWordExam = async (file) => {
-  console.log("开始解析 Word 文件:", file.name);
+  console.log("开始全局扫描解析 Word 文件:", file.name);
   const arrayBuffer = await file.arrayBuffer();
   const result = await mammoth.extractRawText({ arrayBuffer });
   const text = result.value;
-  console.log("成功提取文本，字数:", text.length);
+  console.log("成功提取文本，总字数:", text.length);
 
-  // Mapping of section names to types
   const sectionTypeMap = {
     '单项选择题': 1,
     '多项选择题': 2,
@@ -16,125 +15,104 @@ export const parseWordExam = async (file) => {
     '实操题': 5
   };
 
-  // Split text into questions and answers sections
-  const answerStartIdx = text.search(/（?[AB]）?标准答案/);
-  const questionsText = answerStartIdx !== -1 ? text.substring(0, answerStartIdx) : text;
-  const answersText = answerStartIdx !== -1 ? text.substring(answerStartIdx) : '';
-  console.log("拆分题目区字数:", questionsText.length, "答案区字数:", answersText.length);
-
-  const qLines = questionsText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
-  const aLines = answersText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
-  console.log("有效行数:", qLines.length);
-
+  // 1. 提取所有答案
   const answerMap = { 'A': new Map(), 'B': new Map() };
-  let currentPaperForAnswers = 'A';
-
-  // Extract answers
-  for (const line of aLines) {
-    if (line.includes('A）标准答案') || line.includes('A卷答案') || line.includes('试卷（A）')) {
-      currentPaperForAnswers = 'A';
-      continue;
-    }
-    if (line.includes('B）标准答案') || line.includes('B卷答案') || line.includes('试卷（B）')) {
-      currentPaperForAnswers = 'B';
-      continue;
-    }
-    
-    // Match answers like "1.A 2. B"
-    const regex = /(\d+)[.．、]\s*([^ \s]+(?: [^ \s]+)*)/g;
-    let match;
-    while ((match = regex.exec(line)) !== null) {
-      const num = parseInt(match[1]);
-      const ans = match[2].trim();
-      answerMap[currentPaperForAnswers].set(num, ans);
+  const answerSections = text.split(/（?[AB]）?标准答案/);
+  if (answerSections.length > 1) {
+    for (let i = 1; i < answerSections.length; i++) {
+        const paperChar = text.match(new RegExp(`（?([AB])）?标准答案`))?.[1] || (i === 1 ? 'A' : 'B');
+        const sectionText = answerSections[i].split(/（?[AB]）?标准答案/)[0];
+        const ansRegex = /(\d+)[.．、]\s*([^ \s\n]+(?: [^ \s\n]+)*)/g;
+        let m;
+        while ((m = ansRegex.exec(sectionText)) !== null) {
+            answerMap[paperChar].set(parseInt(m[1]), m[2].trim());
+        }
     }
   }
   console.log("答案提取完成: A卷", answerMap.A.size, "个, B卷", answerMap.B.size, "个");
 
+  // 2. 提取所有题目
   const questions = [];
-  let currentPaper = 'A';
-  let questionType = 1;
-  let lastQuestion = null;
-
-  // Extract questions
-  for (const line of qLines) {
-    // Check for paper title
-    if (line.includes('（A卷）') || (line.includes('试卷') && line.includes('A'))) { 
-      currentPaper = 'A'; 
-      console.log("切换到 A 卷模式");
-      continue; 
-    }
-    if (line.includes('（B卷）') || (line.includes('试卷') && line.includes('B'))) { 
-      currentPaper = 'B'; 
-      console.log("切换到 B 卷模式");
-      continue; 
-    }
-
-    // Check for section
-    let foundSection = false;
-    for (const sectionName in sectionTypeMap) {
-      if (line.includes(sectionName)) {
-        questionType = sectionTypeMap[sectionName];
-        foundSection = true;
-        console.log("切换题型为:", sectionName, "(", questionType, ")");
-        break;
-      }
-    }
-    if (foundSection) continue;
-
-    // Match question: Allow leading spaces or punctuation
-    const qMatch = line.match(/^(\d+)[.．、\s]\s*(.*)/) || line.match(/^\s*(\d+)[.．、\s]\s*(.*)/);
-    if (qMatch) {
-      const qNum = parseInt(qMatch[1]);
-      let qText = qMatch[2].trim();
+  // 将文本按试卷拆分
+  const paperParts = text.split(/（?([AB])卷）|试卷\s*（([AB])）/);
+  // 注意：split 带捕获括号会保留分隔符。我们要手动处理。
+  
+  // 简单起见，我们直接在整个题目区搜索
+  const questionsOnlyText = answerSections[0];
+  
+  // 识别题型分段
+  const sections = [];
+  let lastIdx = 0;
+  const sectionRegex = new RegExp(Object.keys(sectionTypeMap).join('|'), 'g');
+  let sectionMatch;
+  while ((sectionMatch = sectionRegex.exec(questionsOnlyText)) !== null) {
+      sections.push({
+          type: sectionTypeMap[sectionMatch[0]],
+          start: sectionMatch.index,
+          name: sectionMatch[0]
+      });
+  }
+  
+  for (let i = 0; i < sections.length; i++) {
+      const currentSection = sections[i];
+      const nextSectionStart = sections[i+1]?.start || questionsOnlyText.length;
+      const sectionContent = questionsOnlyText.substring(currentSection.start, nextSectionStart);
       
-      // Extract difficulty
-      let degree = 1;
-      const dMatch = qText.match(/难度\s*(\d+)/);
-      if (dMatch) {
-        degree = parseInt(dMatch[1]);
-        qText = qText.replace(/难度\s*(\d+)/, '').trim();
-      }
+      // 判断当前段落属于哪个试卷 (看这段文字之前最近的试卷标记)
+      const textBefore = questionsOnlyText.substring(0, currentSection.start);
+      const paperMatch = textBefore.match(/（?([AB])卷）|试卷\s*（([AB])）/g);
+      const currentPaper = paperMatch ? (paperMatch[paperMatch.length-1].includes('B') ? 'B' : 'A') : 'A';
 
-      qText = qText.replace(/（\s*）/g, '').replace(/\(\s*\)/g, '').replace(/_{2,}/g, '').trim();
+      // 在段落内搜索题目: 数字开头 + 点/顿号
+      const qRegex = /(\d+)[.．、]\s*([^]*?)(?=\d+[.．、]|$)/g;
+      let qm;
+      while ((qm = qRegex.exec(sectionContent)) !== null) {
+          const qNum = parseInt(qm[1]);
+          let fullContent = qm[2].trim();
+          
+          // 提取难度
+          let degree = 1;
+          const dMatch = fullContent.match(/难度\s*(\d+)/);
+          if (dMatch) {
+              degree = parseInt(dMatch[1]);
+              fullContent = fullContent.replace(/难度\s*(\d+)/, '').trim();
+          }
 
-      const newQuestion = {
-        id: `word_${currentPaper}_${qNum}_${Math.random().toString(36).substr(2, 5)}`,
-        QuestionName: `[${currentPaper}卷] ${qText}`,
-        QuestionType: questionType,
-        Digree: degree,
-        QuestionContent: [],
-        Answer: answerMap[currentPaper].get(qNum) || '',
-        QuestionPoolId: 1,
-        Status: 0
-      };
-      
-      questions.push(newQuestion);
-      lastQuestion = newQuestion;
-      console.log("匹配到题目:", qNum, qText.substring(0, 20));
-      continue;
-    }
+          // 分离题干和选项
+          // 选项通常以 A. B. C. D. 开头
+          let qName = fullContent;
+          const qOptions = [];
+          const optRegex = /([A-Z])[.．、\s]\s*([^A-Z \s\n]+(?: [^A-Z \s\n]+)*)/g;
+          let om;
+          const firstOptIdx = fullContent.search(/[A-Z][.．、\s]/);
+          if (firstOptIdx !== -1) {
+              qName = fullContent.substring(0, firstOptIdx).trim();
+              while ((om = optRegex.exec(fullContent)) !== null) {
+                  qOptions.push(om[2].trim());
+              }
+          }
 
-    // Match options
-    if (lastQuestion && (lastQuestion.QuestionType === 1 || lastQuestion.QuestionType === 2)) {
-      // Look for A. B. C. D. 
-      const optionsRegex = /([A-Z])[.．、\s]\s*([^A-Z \s\u2000-\u200F]+(?: [^A-Z \s\u2000-\u200F]+)*)/g;
-      let oMatch;
-      let foundOption = false;
-      while ((oMatch = optionsRegex.exec(line)) !== null) {
-        lastQuestion.QuestionContent.push(oMatch[2].trim());
-        foundOption = true;
+          qName = qName.replace(/（\s*）/g, '').replace(/\(\s*\)/g, '').replace(/_{2,}/g, '').trim();
+          
+          // 过滤掉太短的（可能是误匹配）
+          if (qName.length < 2 && qOptions.length === 0) continue;
+
+          questions.push({
+            id: `word_${currentPaper}_${qNum}_${Math.random().toString(36).substr(2, 5)}`,
+            QuestionName: `[${currentPaper}卷] ${qName}`,
+            QuestionType: currentSection.type,
+            Digree: degree,
+            QuestionContent: qOptions,
+            Answer: answerMap[currentPaper].get(qNum) || '',
+            QuestionPoolId: 1,
+            Status: 0
+          });
       }
-      if (foundOption) {
-          console.log("  匹配到选项:", lastQuestion.QuestionContent.slice(-1)[0]);
-          continue;
-      }
-    }
   }
 
-  console.log("解析结束，总题目数:", questions.length);
+  console.log("解析结束，成功提取题目数:", questions.length);
 
-  // Post-process answers
+  // 3. 答案格式转换
   questions.forEach(q => {
     if (!q.Answer) return;
     if (q.QuestionType === 1) {
