@@ -5,12 +5,6 @@ export const parseWordExam = async (file) => {
   const result = await mammoth.extractRawText({ arrayBuffer });
   const text = result.value;
   
-  const lines = text.split('\n').map(line => line.trim()).filter(line => line.length > 0);
-  const questions = [];
-  let currentPaper = '';
-  let currentSection = '';
-  let questionType = 1; // Default to single choice
-  
   // Mapping of section names to types
   const sectionTypeMap = {
     '单项选择题': 1,
@@ -20,62 +14,60 @@ export const parseWordExam = async (file) => {
     '实操题': 5
   };
 
+  // Split text into questions and answers sections
+  // Using a more flexible regex for splitting
+  const answerStartIdx = text.search(/（?[AB]）?标准答案/);
+  const questionsText = answerStartIdx !== -1 ? text.substring(0, answerStartIdx) : text;
+  const answersText = answerStartIdx !== -1 ? text.substring(answerStartIdx) : '';
+
+  const qLines = questionsText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+  const aLines = answersText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+
   const answerMap = { 'A': new Map(), 'B': new Map() };
   let currentPaperForAnswers = 'A';
 
-  // First pass: extract answers
-  let inAnswerSection = false;
-  for (let line of lines) {
-    if (line.includes('（A）标准答案')) {
-      inAnswerSection = true;
+  // Extract answers
+  for (const line of aLines) {
+    if (line.includes('A）标准答案') || line.includes('A卷答案')) {
       currentPaperForAnswers = 'A';
       continue;
     }
-    if (line.includes('（B）标准答案')) {
-      inAnswerSection = true;
+    if (line.includes('B）标准答案') || line.includes('B卷答案')) {
       currentPaperForAnswers = 'B';
       continue;
     }
-    if (inAnswerSection) {
-      // Parse answers like "1.A 2. B" or "16.√" or "26.四分音符"
-      // Match "1.A" or "1. A" or "1、A"
-      const parts = line.split(/[ \s]+(?=\d+[.．、])/);
-      if (parts.length === 1 && !line.match(/^\d+[.．、]/)) {
-          // Maybe answers are space-separated without numbering? 
-          // No, the Word text showed "1.A 2. B"
-      }
-      
-      const regex = /(\d+)[.．、]\s*([^ \s]+(?: [^ \s]+)*)/g;
-      let match;
-      while ((match = regex.exec(line)) !== null) {
-        const num = parseInt(match[1]);
-        const ans = match[2].trim();
-        answerMap[currentPaperForAnswers].set(num, ans);
-      }
+    
+    // Match answers like "1.A 2. B" or "16.√" or "26.四分音符"
+    const regex = /(\d+)[.．、]\s*([^ \s]+(?: [^ \s]+)*)/g;
+    let match;
+    while ((match = regex.exec(line)) !== null) {
+      const num = parseInt(match[1]);
+      const ans = match[2].trim();
+      answerMap[currentPaperForAnswers].set(num, ans);
     }
   }
 
-  // Second pass: extract questions
-  inAnswerSection = false;
+  const questions = [];
+  let currentPaper = 'A';
+  let questionType = 1;
   let lastQuestion = null;
-  currentPaper = 'A'; // Reset
 
-  for (let line of lines) {
-    if (line.includes('标准答案')) {
-      inAnswerSection = true;
-      continue;
-    }
-    if (inAnswerSection) continue;
-
+  // Extract questions
+  for (const line of qLines) {
     // Check for paper title
-    if (line.includes('（A卷）')) { currentPaper = 'A'; continue; }
-    if (line.includes('（B卷）')) { currentPaper = 'B'; continue; }
+    if (line.includes('（A卷）') || line.includes('试卷（A）')) { 
+      currentPaper = 'A'; 
+      continue; 
+    }
+    if (line.includes('（B卷）') || line.includes('试卷（B）')) { 
+      currentPaper = 'B'; 
+      continue; 
+    }
 
     // Check for section
     let foundSection = false;
-    for (let sectionName in sectionTypeMap) {
+    for (const sectionName in sectionTypeMap) {
       if (line.includes(sectionName)) {
-        currentSection = sectionName;
         questionType = sectionTypeMap[sectionName];
         foundSection = true;
         break;
@@ -83,13 +75,13 @@ export const parseWordExam = async (file) => {
     }
     if (foundSection) continue;
 
-    // Check for question: "1. XXX", "2. XXX", etc.
+    // Match question: "1. XXX" (allow optional leading punctuation/spaces)
     const qMatch = line.match(/^(\d+)[.．、]\s*(.*)/);
     if (qMatch) {
       const qNum = parseInt(qMatch[1]);
       let qText = qMatch[2].trim();
       
-      // Extract difficulty if present: "难度 1"
+      // Extract difficulty
       let degree = 1;
       const dMatch = qText.match(/难度\s*(\d+)/);
       if (dMatch) {
@@ -97,11 +89,11 @@ export const parseWordExam = async (file) => {
         qText = qText.replace(/难度\s*(\d+)/, '').trim();
       }
 
-      // Remove "( )" or "（ ）" or "____" from question name
+      // Cleanup question text
       qText = qText.replace(/（\s*）/g, '').replace(/\(\s*\)/g, '').replace(/_{2,}/g, '').trim();
 
       const newQuestion = {
-        id: `word_${currentPaper}_${qNum}`,
+        id: `word_${currentPaper}_${qNum}_${Math.random().toString(36).substr(2, 5)}`,
         QuestionName: `[${currentPaper}卷] ${qText}`,
         QuestionType: questionType,
         Digree: degree,
@@ -116,30 +108,26 @@ export const parseWordExam = async (file) => {
       continue;
     }
 
-    // Check for options: "A. XXX", "B. XXX", etc.
+    // Match options
     if (lastQuestion && (lastQuestion.QuestionType === 1 || lastQuestion.QuestionType === 2)) {
-      const options = line.split(/[ \s]+(?=[A-Z][.．、])/);
+      // Look for A. B. C. D. in the line
+      const optionsRegex = /([A-Z])[.．、]\s*([^A-Z \s]+(?: [^A-Z \s]+)*)/g;
+      let oMatch;
       let foundOption = false;
-      for (let opt of options) {
-        const oMatch = opt.match(/^([A-Z])[.．、](.*)/);
-        if (oMatch) {
-          lastQuestion.QuestionContent.push(oMatch[2].trim());
-          foundOption = true;
-        }
+      while ((oMatch = optionsRegex.exec(line)) !== null) {
+        lastQuestion.QuestionContent.push(oMatch[2].trim());
+        foundOption = true;
       }
       if (foundOption) continue;
     }
-    
-    // If it's a follow-up line for a question (like in fill-in-the-blanks or complex questions)
-    if (lastQuestion && !line.match(/^[A-Z][.．、]/) && !line.match(/^\d+[.．、]/)) {
-        // Just append to question name or content if needed
-        // For now, let's keep it simple
-    }
   }
 
-  // Post-process answers
+  // Post-process answers to match application format
   questions.forEach(q => {
-    if (q.QuestionType === 1) { // Single choice: convert "A" to index
+    if (!q.Answer) return;
+
+    if (q.QuestionType === 1) { // Single choice: convert "A" to index (0-based for logic, but UI shows 1-based)
+      // Note: your application logic seems to expect "0" for index 0 (Option A)
       const letter = q.Answer.toUpperCase();
       if (letter >= 'A' && letter <= 'Z') {
         q.Answer = String(letter.charCodeAt(0) - 'A'.charCodeAt(0) + 1);
@@ -152,8 +140,8 @@ export const parseWordExam = async (file) => {
       }).filter(i => i !== null);
       q.Answer = JSON.stringify(indices);
     } else if (q.QuestionType === 3) { // True/False: "√" -> 1, "×" -> 0
-      if (q.Answer === '√') q.Answer = '1';
-      else if (q.Answer === '×') q.Answer = '0';
+      if (q.Answer === '√' || q.Answer === '正确' || q.Answer === '对') q.Answer = '1';
+      else if (q.Answer === '×' || q.Answer === '错误' || q.Answer === '错') q.Answer = '0';
     } else if (q.QuestionType === 4) { // Fill in blanks: "A; B" -> ["A", "B"]
         const blanks = q.Answer.split(/[；;]/).map(b => b.trim());
         q.Answer = JSON.stringify(blanks);
