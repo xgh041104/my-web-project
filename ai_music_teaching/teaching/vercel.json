@@ -6,6 +6,38 @@
     {
       "source": "/subjectcourse/:match*",
       "destination": "http://47.113.223.219/subjectcourse/:match*"
+    },
+    {
+      "source": "/musicDict/:match*",
+      "destination": "http://www.bk.rymusic.art/:match*"
+    },
+    {
+      "source": "/newDict/:match*",
+      "destination": "http://47.120.65.190/:match*"
+    },
+    {
+      "source": "/musicBox/:match*",
+      "destination": "http://catkin.rymusic.net/:match*"
+    },
+    {
+      "source": "/scorePractice/:match*",
+      "destination": "https://faberc-api.rymusic.net/:match*"
+    },
+    {
+      "source": "/scoreStatic/:match*",
+      "destination": "https://faber-static.rymusic.net/:match*"
+    },
+    {
+      "source": "/chatbot/:match*",
+      "destination": "https://spark-api-open.xf-yun.com/v2/:match*"
+    },
+    {
+      "source": "/docmee/:match*",
+      "destination": "https://open.docmee.cn/api/:match*"
+    },
+    {
+      "source": "/musicTeaching/:match*",
+      "destination": "http://192.168.1.14:8080/:match*"
     }
   ]
 }
