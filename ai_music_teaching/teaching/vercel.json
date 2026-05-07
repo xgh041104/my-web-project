@@ -1,5 +1,11 @@
 {
   "buildCommand": "export NODE_OPTIONS=--openssl-legacy-provider && npm run build",
   "outputDirectory": "dist",
-  "framework": "umijs"
+  "framework": "umijs",
+  "rewrites": [
+    {
+      "source": "/subjectcourse/:match*",
+      "destination": "http://47.113.223.219/subjectcourse/:match*"
+    }
+  ]
 }
