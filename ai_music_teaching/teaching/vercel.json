@@ -1,5 +1,5 @@
 {
-  "buildCommand": "export NODE_OPTIONS=--openssl-legacy-provider && cd ai_music_teaching && npm install --legacy-peer-deps && npm run build",
+  "buildCommand": "export NODE_OPTIONS=--openssl-legacy-provider && npm run build",
   "outputDirectory": "dist",
   "framework": "umijs"
 }
