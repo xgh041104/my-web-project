@@ -368,7 +368,7 @@ const Login = ({ loading, dispatch, login, user }) => {
         <div style={{ zIndex: "1000", overflow: "hidden" }}>
           <iframe
             style={{ width: "100vw", height: "100vh", border: "0" }}
-            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8001/login" : "https://my-web-project-manage.vercel.app/"}
+            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8001/login" : "https://my-web-project-manage.vercel.app/login"}
             // allow='autoplay; microphone; midi'
           ></iframe>
         </div>
