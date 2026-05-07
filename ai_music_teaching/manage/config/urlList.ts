@@ -1,6 +1,6 @@
 export const siteName = '学习考试平台';
 // export const hostAddr = "http://47.116.207.219/studyexamapi";
-export const hostAddr = 'http://10.224.53.121:7566';
+export const hostAddr = 'https://exam-backend-u6wy.onrender.com';
 export const apiPrefix = hostAddr + '/Manage';
 export const studentExam = hostAddr + '/Student';
 
