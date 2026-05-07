@@ -7,7 +7,7 @@ import {
 } from ".";
 import supportedSoundfontInstruments from "../OpenSheetMusicDisplay/osmdPlayer/players/musyngkiteInstruments";
 
-import * as JZZ from "JZZ";
+import * as JZZ from "jzz";
 import MIDI from "midi.js";
 require("./JZZ.synth.MIDIjs")(JZZ);
 
