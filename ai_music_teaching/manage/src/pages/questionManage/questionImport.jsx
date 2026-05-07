@@ -4,6 +4,7 @@ import { EditableProTable, ModalForm, ProForm, ProFormItem, ProFormRadio } from 
 import React, { useEffect, useState, useRef } from 'react';
 import CourseCascader, { getCourseName } from './_courseCascader'
 import { connect } from 'umi';
+import { parseWordExam } from '@/utils/wordParser';
 
 function ListDataEdit({ value, onChange }) {
     // console.log("")
@@ -239,8 +240,24 @@ function QuestionImport({ dispatch }) {
             <ProFormItem name="Digree" label="修改难度" ><Rate /></ProFormItem>
         </ModalForm>
     }
-    const handleUpload = () => {
+    const handleUpload = async () => {
         setUploading(true);
+        
+        const fileName = uploadFile.name.toLowerCase();
+        if (fileName.endsWith('.docx')) {
+            try {
+                const questions = await parseWordExam(uploadFile);
+                message.success('Word 题目解析成功');
+                setDataSource(questions);
+                setUploading(false);
+            } catch (error) {
+                console.error('Word parse error:', error);
+                message.error('Word 题目解析失败：' + error.message);
+                setUploading(false);
+            }
+            return;
+        }
+
         dispatch({
             type: "questionManage/parseQuestionData",
             payload: {
@@ -280,7 +297,7 @@ function QuestionImport({ dispatch }) {
             return false;
         },
         maxCount: 1,
-        accept: ".xls, .xlsx, .csv"
+        accept: ".xls, .xlsx, .csv, .docx"
     };
 
     const questionPoolOptions = ['公共题库', '专业课题库']
