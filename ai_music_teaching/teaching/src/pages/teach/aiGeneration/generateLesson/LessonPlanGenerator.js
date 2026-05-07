@@ -1,31 +1,31 @@
-import React, { useState, useRef, useEffect } from 'react';
-import CryptoJS from 'crypto-js';
-import { saveToWord } from './docxUtils';
-import { Button, Modal, Input, message } from 'antd';
-import { history, useSelector } from 'umi';
-import './lessonOutlinePreview.css';
-import MarkDownEditor from 'components/mdeditor';
+import React, { useState, useRef, useEffect } from "react";
+import CryptoJS from "crypto-js";
+import { saveToWord } from "./docxUtils";
+import { Button, Modal, Input, message } from "antd";
+import { history, useSelector } from "umi";
+import "./lessonOutlinePreview.css";
+import MarkDownEditor from "../../../../components/mdeditor";
 
 // 生成WebSocket参数
 const genParams = (appid, query, domain) => {
   return {
     header: {
       app_id: appid,
-      uid: "1234"
+      uid: "1234",
     },
     parameter: {
       chat: {
         domain: domain,
         temperature: 0.5,
         max_tokens: 4096,
-        auditing: "default"
-      }
+        auditing: "default",
+      },
     },
     payload: {
       message: {
-        text: [{ role: "user", content: query }]
-      }
-    }
+        text: [{ role: "user", content: query }],
+      },
+    },
   };
 };
 
@@ -44,13 +44,15 @@ const createWsUrl = (appid, apiKey, apiSecret, sparkUrl) => {
   const authorizationOrigin = `api_key="${apiKey}", algorithm="hmac-sha256", headers="host date request-line", signature="${signatureBase64}"`;
   const authorization = btoa(authorizationOrigin);
 
-  return `${sparkUrl}?authorization=${encodeURIComponent(authorization)}&date=${encodeURIComponent(date)}&host=${encodeURIComponent(host)}`;
+  return `${sparkUrl}?authorization=${encodeURIComponent(
+    authorization,
+  )}&date=${encodeURIComponent(date)}&host=${encodeURIComponent(host)}`;
 };
 
 // 主组件
 const LessonOutlinePreview = () => {
-  const { totalTitle } = useSelector(state => state.generation);
-  let requirement = totalTitle || '';
+  const { totalTitle } = useSelector((state) => state.generation);
+  let requirement = totalTitle || "";
 
   const appid = "2ecb3dcd";
   const apiSecret = "ODQxMGYyNzI1NTZlOWFmY2M2ZWMxZTM5";
@@ -59,16 +61,16 @@ const LessonOutlinePreview = () => {
   const domain = "4.0Ultra";
 
   const [isGenerating, setIsGenerating] = useState(true);
-  const [outputContent, setOutputContent] = useState('');
+  const [outputContent, setOutputContent] = useState("");
   const [isDownloadReady, setIsDownloadReady] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modifyRequirement, setModifyRequirement] = useState('');
-  const [inputValue, setInputValue] = useState(requirement || '');
+  const [modifyRequirement, setModifyRequirement] = useState("");
+  const [inputValue, setInputValue] = useState(requirement || "");
   const [editorKey, setEditorKey] = useState(0);
 
   const wsRef = useRef(null);
-  const fullContentRef = useRef('');
-  const bufferRef = useRef('');
+  const fullContentRef = useRef("");
+  const bufferRef = useRef("");
   const renderTimerRef = useRef(null);
 
   // 初始化生成教案
@@ -92,9 +94,9 @@ const LessonOutlinePreview = () => {
   const flushBufferToOutput = () => {
     if (bufferRef.current) {
       // 批量更新内容
-      setOutputContent(prev => prev + bufferRef.current);
+      setOutputContent((prev) => prev + bufferRef.current);
       // 清空缓冲区
-      bufferRef.current = '';
+      bufferRef.current = "";
     }
 
     // 重置定时器
@@ -108,7 +110,7 @@ const LessonOutlinePreview = () => {
       }
 
       // 清理缓冲区和定时器
-      bufferRef.current = '';
+      bufferRef.current = "";
       if (renderTimerRef.current) {
         clearTimeout(renderTimerRef.current);
       }
@@ -129,7 +131,9 @@ const LessonOutlinePreview = () => {
           const message = JSON.parse(event.data);
 
           if (message.header && message.header.code !== 0) {
-            message.error(`请求错误: ${message.header.code}, ${message.header.message}`);
+            message.error(
+              `请求错误: ${message.header.code}, ${message.header.message}`,
+            );
             setIsGenerating(false);
             wsRef.current.close();
             return;
@@ -149,8 +153,8 @@ const LessonOutlinePreview = () => {
             if (status === 2) {
               // 结束生成时立即刷新缓冲区
               if (bufferRef.current) {
-                setOutputContent(prev => prev + bufferRef.current);
-                bufferRef.current = '';
+                setOutputContent((prev) => prev + bufferRef.current);
+                bufferRef.current = "";
               }
 
               // 清理定时器
@@ -183,7 +187,7 @@ const LessonOutlinePreview = () => {
         }
       };
 
-      wsRef.current.onclose = () => { };
+      wsRef.current.onclose = () => {};
     } catch (error) {
       message.error(`初始化连接时出错: ${error.message}`);
       setIsGenerating(false);
@@ -193,11 +197,11 @@ const LessonOutlinePreview = () => {
   const handleGenerate = (inputText) => {
     setInputValue(inputText);
     setIsGenerating(true);
-    setOutputContent('');
+    setOutputContent("");
     setIsDownloadReady(false);
-    fullContentRef.current = '';
-    bufferRef.current = '';
-    setEditorKey(prev => prev + 1);
+    fullContentRef.current = "";
+    bufferRef.current = "";
+    setEditorKey((prev) => prev + 1);
 
     // 清理定时器
     if (renderTimerRef.current) {
@@ -219,7 +223,7 @@ const LessonOutlinePreview = () => {
 
   const handleOk = () => {
     if (!modifyRequirement.trim()) {
-      message.warning('请输入修改意见');
+      message.warning("请输入修改意见");
       return;
     }
 
@@ -227,15 +231,15 @@ const LessonOutlinePreview = () => {
     const requirementContent = modifyRequirement;
 
     // 清空修改输入框
-    setModifyRequirement('');
+    setModifyRequirement("");
 
     setIsGenerating(true);
-    setOutputContent('');
+    setOutputContent("");
     setIsDownloadReady(false);
-    fullContentRef.current = '';
-    bufferRef.current = '';
+    fullContentRef.current = "";
+    bufferRef.current = "";
     setIsModalOpen(false);
-    setEditorKey(prev => prev + 1);
+    setEditorKey((prev) => prev + 1);
 
     // 清理定时器
     if (renderTimerRef.current) {
@@ -252,20 +256,20 @@ const LessonOutlinePreview = () => {
     if (fullContentRef.current) {
       saveToWord(fullContentRef.current);
     } else {
-      message.warning('没有可下载的内容');
+      message.warning("没有可下载的内容");
     }
   };
 
-  const prefix = '/teach/aiGeneration';
+  const prefix = "/teach/aiGeneration";
   const handleBack = () => {
     history.push({ pathname: prefix });
   };
 
-
   return (
     <div className="container">
       <div className="header">
-        <div className="title">预览
+        <div className="title">
+          预览
           <Button
             type="primary"
             onClick={showModal}
@@ -284,7 +288,7 @@ const LessonOutlinePreview = () => {
               value={outputContent}
               onChange={(v) => {
                 setOutputContent(v);
-                fullContentRef.current = v
+                fullContentRef.current = v;
               }}
             />
           ) : isGenerating ? (

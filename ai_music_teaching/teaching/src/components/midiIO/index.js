@@ -1,4 +1,4 @@
-import * as JZZ from 'jzz';
+import * as JZZ from 'JZZ';
 
 var midiIO = undefined;
 var input = [];

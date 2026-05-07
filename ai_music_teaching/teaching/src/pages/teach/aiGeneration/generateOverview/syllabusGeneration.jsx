@@ -2,10 +2,10 @@ import React, { useState, useRef } from 'react';
 import { Checkbox, Button, Input, Divider, message, Tree } from 'antd';
 import styles from './syllabusGeneration.less';
 import { history } from 'umi';
-import { useDispatch, useSelector } from 'umi';
+import { useDispatch } from 'umi';
 const { TextArea } = Input;
 
-export default function SyllabusGeneration() {
+export default function SyllabusGeneration () {
   const [selectedKeys, setSelectedKeys] = useState(new Set(['opt4', 'opt5']));
   const [text, setText] = useState('课程简介;教学目的;');
   const [titleContent, setTitleContent] = useState('');
@@ -14,7 +14,7 @@ export default function SyllabusGeneration() {
   const textRef = useRef(null);
   const cursorPos = useRef(0);
   const dispatch = useDispatch();
-  const useSelector = useState();
+  // const useSelector = useState();
   const options = [
     { key: 'opt4', label: '课程简介' },
     { key: 'opt5', label: '教学目的' },
@@ -211,7 +211,7 @@ export default function SyllabusGeneration() {
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
         <h3 style={{ margin: 0, marginRight: '10px' }}>课程名称:</h3>
         <Input
-          style={{ width: '300px' ,borderRadius:'6px'}}
+          style={{ width: '300px', borderRadius: '6px' }}
           placeholder="请输入..."
           onChange={(e) => setTitleContent(e.target.value)}
         />
@@ -219,14 +219,14 @@ export default function SyllabusGeneration() {
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2>教学大纲重点</h2>
-        <button onClick={handleAllToggle} style={{ 
+        <button onClick={handleAllToggle} style={{
           background: 'linear-gradient(90deg, rgb(82, 155, 238), rgb(52, 136, 232))', // 渐变背景
           color: 'white',
           padding: '10px 20px',
-          border: 'none',   
+          border: 'none',
           borderRadius: '5px',
           cursor: 'pointer'
-         }}>
+        }}>
           {selectedKeys.size === getAllOptions().length ? '取消全选' : '全选'}
         </button>
       </div>
