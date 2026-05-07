@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "api": [
+        "./src/services/index"
+      ],
+      "@@/*": [
+        "./src/.umi/*"
+      ],
+      "@@test/*": [
+        "./src/.umi-test/*"
+      ],
+      "urlList": [
+        "./config/urlList"
+      ],
+    }
+  },
+  "include": [
+    "./**/*.d.ts",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "config", "src/pages/schoolManage/index.js",
+  ]
+}

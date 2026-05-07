@@ -1,0 +1,17 @@
+.student-exam-layout {
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.student-exam-header {
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  justify-content: space-between;
+  background-color: #1890ff;
+}
+
+.student-exam-content {
+  padding: 16px 24px;
+  background: #fff;
+}

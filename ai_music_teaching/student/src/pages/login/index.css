@@ -1,0 +1,50 @@
+.form {
+  margin: 0;
+  min-height: 25%;
+  width: 4rem;
+  padding: 0.4rem;
+  box-shadow: 0 0 .9rem rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.form p {
+  color: rgb(204, 204, 204);
+  text-align: center;
+  margin-top: 0.08rem;
+  font-size: 0.12rem;
+  /* display: flex; */
+  justify-content: space-between;
+}
+
+
+.logo {
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 0.24rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 0.4rem;
+  margin-right: .08rem;
+}
+
+.logo span {
+  width: 50%;
+  background-color: rgb(24, 144, 255);
+  border-radius: 0.05rem;
+  vertical-align: text-bottom;
+  font-size: 0.016rem;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 700;
+  color: white;
+}
+
+
+/* .ant-spin-container,
+.ant-spin-nested-loading {
+  height: 100%;
+} */

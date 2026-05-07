@@ -1,0 +1,18 @@
+
+.unityexitbutton :hover{
+    border: 1px solid antiquewhite;
+    background-color: antiquewhite;
+    color: #000;
+}
+
+.unity-frame {
+    height: 100vh;
+    width: 100vw;
+    background: black;
+}
+
+.unity-container {
+    margin: auto;
+    height: min(100vh, calc(100vw * 9 / 16));
+    width: calc((min(100vh, calc(100vw * 9 / 16))) * 16 / 9);
+}

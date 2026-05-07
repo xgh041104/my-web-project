@@ -1,0 +1,8 @@
+.ql-hidden{
+    /* 不删除ql-hidden会在显示预览时有大片空白 */
+    display: none;
+}
+
+.ql-editor img {
+    max-width: 100%;
+}

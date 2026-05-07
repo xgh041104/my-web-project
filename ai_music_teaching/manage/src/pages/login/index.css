@@ -1,0 +1,70 @@
+.img {
+  margin: .7rem 0;
+  width: 100%;
+  height: auto;
+
+}
+
+
+.form {
+  /* position: absolute; */
+  /* left: 47%; */
+  margin: 0;
+  width: 100%;
+  height: auto;
+  padding: 0.4rem;
+  box-shadow: 0 0 .9rem rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.form button {
+  width: 68%;
+  margin-left: 20%;
+}
+
+.form p {
+  color: rgb(204, 204, 204);
+  text-align: center;
+  margin-top: 0.08rem;
+  font-size: 0.12rem;
+  /* display: flex; */
+  justify-content: space-between;
+}
+
+
+.logo {
+  text-align: left;
+  margin-bottom: 0.4rem;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+.logo img {
+  width: 0.4rem;
+  margin-right: .08rem;
+}
+
+.logo span {
+  width: 100%;
+  background-color: 'white';
+  border-radius: 0.05rem;
+  vertical-align: text-bottom;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.20rem;
+  color: white;
+}
+
+
+.ant-spin-container,
+.ant-spin-nested-loading {
+  height: 100%;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

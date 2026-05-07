@@ -1,0 +1,11 @@
+.unity-frame {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0);
+}
+
+.unity-container {
+    margin: auto;
+    height: min(100vh, calc(100vw * 9 / 16));
+    width: calc((min(100vh, calc(100vw * 9 / 16))) * 16 / 9);
+}
