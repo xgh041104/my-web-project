@@ -1,5 +1,11 @@
 {
   "buildCommand": "export NODE_OPTIONS=--openssl-legacy-provider && npm run build",
   "outputDirectory": "dist",
-  "framework": "umijs"
+  "framework": "umijs",
+  "rewrites": [
+    {
+      "source": "/aisummary/:path*",
+      "destination": "https://spark-api-open.xf-yun.com/v2/:path*"
+    }
+  ]
 }
