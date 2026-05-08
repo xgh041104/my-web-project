@@ -6,6 +6,10 @@
     {
       "source": "/aisummary/:path*",
       "destination": "https://spark-api-open.xf-yun.com/v2/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
