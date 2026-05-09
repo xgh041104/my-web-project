@@ -382,7 +382,7 @@ const Login = ({ loading, dispatch, login, user }) => {
         <div style={{ zIndex: "1000", overflow: "hidden" }}>
           <iframe
             style={{ width: "100vw", height: "100vh", border: "0" }}
-            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8001/login" : "https://my-web-project-manage.vercel.app/login"}
+            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8001/" : "https://my-web-project-manage.vercel.app/"}
             // allow='autoplay; microphone; midi'
           ></iframe>
         </div>
@@ -391,7 +391,7 @@ const Login = ({ loading, dispatch, login, user }) => {
         <div style={{ zIndex: "1000", overflow: "hidden" }}>
           <iframe
             style={{ width: "100vw", height: "100vh", border: "0" }}
-            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8002/login" : "https://my-web-project-gepy.vercel.app/login"}
+            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8002/" : "https://my-web-project-gepy.vercel.app/"}
             allow="autoplay; microphone; midi"
           ></iframe>
         </div>
