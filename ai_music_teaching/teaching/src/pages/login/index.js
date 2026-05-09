@@ -56,6 +56,14 @@ const Login = ({ loading, dispatch, login, user }) => {
     };
   }, []);
 
+  // 模块选择持久化：从 URL 中读取状态
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const system = params.get('system');
+    if (system === 'exam') setIsExamSystem(true);
+    if (system === 'manage') setIsManageSystem(true);
+  }, []);
+
   // 主要功能模块
   const modules = [
     {
@@ -63,21 +71,27 @@ const Login = ({ loading, dispatch, login, user }) => {
       icon: <ReadOutlined style={{ fontSize: 36, color: "#1677ff" }} />,
       desc: "智能生成旋律与和声，辅助音乐教学创作",
       bgColor: "linear-gradient(135deg, #f0f7ff, #d6e8ff)",
-      onClick: () => handleOk(), // 处理点击事件
+      onClick: () => handleOk(),
     },
     {
       title: "智慧学生考试",
       icon: <EditOutlined style={{ fontSize: 36, color: "#1677ff" }} />,
       desc: "AI 自动识别节奏与音高，实现智能评测",
       bgColor: "linear-gradient(135deg, #eef6ff, #dce8ff)",
-      onClick: () => setIsExamSystem(true), // 处理点击事件
+      onClick: () => {
+        setIsExamSystem(true);
+        window.history.pushState(null, '', '?system=exam');
+      },
     },
     {
       title: "考试管理系统",
       icon: <TeamOutlined style={{ fontSize: 36, color: "#1677ff" }} />,
       desc: "统一管理课件、音频与模型资源，提升效率",
       bgColor: "linear-gradient(135deg, #f5f9ff, #e6efff)",
-      onClick: () => setIsManageSystem(true), // 处理点击事件
+      onClick: () => {
+        setIsManageSystem(true);
+        window.history.pushState(null, '', '?system=manage');
+      },
     },
   ];
 
@@ -397,6 +411,7 @@ const Login = ({ loading, dispatch, login, user }) => {
           onClick={() => {
             setIsManageSystem(false);
             setIsExamSystem(false);
+            window.history.pushState(null, '', window.location.pathname);
           }}
         >
           回到首页
