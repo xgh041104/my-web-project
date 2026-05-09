@@ -383,7 +383,7 @@ const Login = ({ loading, dispatch, login, user }) => {
           <iframe
             style={{ width: "100vw", height: "100vh", border: "0" }}
             src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8100/" : "https://my-web-project-manage.vercel.app/"}
-            // allow='autoplay; microphone; midi'
+            allow="autoplay; microphone; midi"
           ></iframe>
         </div>
       )}
