@@ -59,7 +59,7 @@ export default {
       'pathRewrite': { '^/docmee': '' },
     },
     '/musicTeaching': {
-      target: 'http://192.168.1.14:8080',
+      target: 'https://musicteaching-admin.onrender.com',
       'changeOrigin': true, // 允许域名进行转换
       'pathRewrite': { '^/musicTeaching': '' },
     }

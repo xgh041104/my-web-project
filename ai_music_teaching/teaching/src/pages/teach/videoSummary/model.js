@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // url传参类请求
 const urlAxios = axios.create({
-  baseURL: '/musicTeaching',
+  baseURL: teachPrefix,
   headers: {
     'Content-Type': 'application/json',
   },

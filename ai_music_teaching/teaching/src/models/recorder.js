@@ -5,7 +5,7 @@ import axios from 'axios';
 
 // 修改类请求
 const modifyAxios = axios.create({
-  baseURL: '/musicTeaching',
+  baseURL: teachPrefix,
   timeout: 3000000, // 请求超时时间
   header: {
     'Content-Type': 'multipart/form-data',
@@ -13,7 +13,7 @@ const modifyAxios = axios.create({
 });
 
 const urlAxios = axios.create({
-  baseURL: '/musicTeaching',
+  baseURL: teachPrefix,
   headers: {
     'Content-Type': 'application/json',
   },

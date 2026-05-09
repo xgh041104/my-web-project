@@ -37,7 +37,7 @@
     },
     {
       "source": "/musicTeaching/:match*",
-      "destination": "http://192.168.1.14:8080/:match*"
+      "destination": "https://musicteaching-admin.onrender.com/:match*"
     },
     {
       "source": "/(.*)",
