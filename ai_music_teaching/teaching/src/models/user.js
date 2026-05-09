@@ -85,7 +85,9 @@ export default {
                 console.log("get user info: " + JSON.stringify(userInfo))
                 if (!userInfo || userInfo.userId < 0) {
                     // 用户未登陆
-                    history.push({ pathname: '/login' });
+                    if (history.location.pathname !== '/login') {
+                        history.push({ pathname: '/login' });
+                    }
                     return;
                 }
 
