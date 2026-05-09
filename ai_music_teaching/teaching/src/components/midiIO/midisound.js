@@ -120,7 +120,7 @@ export default class MidiSound {
     );
 
     MIDI.loadPlugin({
-      soundfontUrl: baseUrl + "/soundfont/FluidR3_GM/",
+      soundfontUrl: "https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/",
       // soundfontUrl: "https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/",
       instrument: supportedSoundfontInstruments[id],
       onsuccess: () => {
@@ -150,13 +150,13 @@ export default class MidiSound {
 
     this.synth = await JZZ.synth
       .MIDIjs({
-        soundfontUrl: baseUrl + "/soundfont/FluidR3_GM/",
+        soundfontUrl: "https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/",
       })
       .or((e) => alert("无法加载 synth MIDI.js!\n" + e?.message))
       .and(() => console.log("已加载 synth MIDI.js"));
 
     await MIDI.loadPlugin({
-      soundfontUrl: baseUrl + "/soundfont/FluidR3_GM/",
+      soundfontUrl: "https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/",
       instrument: supportedSoundfontInstruments[0],
       onsuccess: () => {
         MIDI.programChange(0, 0);

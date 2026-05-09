@@ -405,9 +405,7 @@ export default function MusicTheory() {
         .init({
           visualObj: visualObj[0],
           options: {
-            soundFontUrl: baseUrl + "/soundfont/FluidR3_GM_MP3",
-            // soundfontUrl:
-            //   "https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/",
+            soundFontUrl: "https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/",
           },
         })
         .then(() => {

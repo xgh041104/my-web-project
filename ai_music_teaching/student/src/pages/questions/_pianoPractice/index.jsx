@@ -376,7 +376,7 @@ const Practice = ({ scoreFileUrl, onFinished }) => {
                 (notes, notesMaxduration) => {
                     playPracticeJudge.setNotes(notes, notesMaxduration);
                 },
-                rootAddr+'/'+baseUrl+'/soundfont/FluidR3_GM',
+                "https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM",
                 () => {
                     // message.success("osmd初始化成功！");
                     setSpinLoading(false);
