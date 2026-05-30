@@ -3,6 +3,9 @@ import supportedSoundfontInstruments from "../OpenSheetMusicDisplay/osmdPlayer/p
 
 import JZZ from 'jzz';
 import MIDI from 'midi.js';
+if (typeof window !== "undefined") {
+    window.MIDI = MIDI;
+}
 import JZZSynthMIDIjs from './JZZ.synth.MIDIjs';
 JZZSynthMIDIjs(JZZ);
 

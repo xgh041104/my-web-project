@@ -9,6 +9,9 @@ import supportedSoundfontInstruments from "../OpenSheetMusicDisplay/osmdPlayer/p
 
 import * as JZZ from "jzz";
 import MIDI from "midi.js";
+if (typeof window !== "undefined") {
+  window.MIDI = MIDI;
+}
 require("./JZZ.synth.MIDIjs")(JZZ);
 
 import { baseUrl } from "config";

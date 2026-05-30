@@ -32,8 +32,20 @@ const Login = ({ loading, dispatch, login, user }) => {
   const [errorMsgVisible, setErrorMsgVisible] = useState(false);
   const [loginingInfo, setLoginingInfo] = useState(null);
   const [userForm] = Form.useForm();
-  const [isExamSystem, setIsExamSystem] = useState(false);
-  const [isManageSystem, setIsManageSystem] = useState(false);
+
+  // 同步从 URL 初始化系统状态，防止页面载入/刷新时闪烁主页
+  const [isExamSystem, setIsExamSystem] = useState(() => {
+    if (typeof window !== "undefined") {
+      return new URLSearchParams(window.location.search).get("system") === "exam";
+    }
+    return false;
+  });
+  const [isManageSystem, setIsManageSystem] = useState(() => {
+    if (typeof window !== "undefined") {
+      return new URLSearchParams(window.location.search).get("system") === "manage";
+    }
+    return false;
+  });
 
   useEffect(() => {
     const userInfo = window.localStorage.getItem("userInfo");

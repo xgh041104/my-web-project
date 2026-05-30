@@ -16,6 +16,18 @@ export default {
     setupHistory({ dispatch, history }) {  // eslint-disable-line
       const check = ({ pathname, state }) => {
         if (pathToRegexp("/login").exec(pathname)) {
+          try {
+            const userInfoStr = window.sessionStorage.getItem("userInfo");
+            if (userInfoStr) {
+              const userInfo = JSON.parse(userInfoStr);
+              if (userInfo && userInfo.isLogin) {
+                history.push({ pathname: '/exam' });
+                return;
+              }
+            }
+          } catch (e) {
+            console.error("Auto-redirect check failed:", e);
+          }
           // 如果是登录页面，则查询文件服务器地址
           dispatch({ type: 'queryFileAddr' });
         }
