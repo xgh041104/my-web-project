@@ -382,7 +382,7 @@ const Login = ({ loading, dispatch, login, user }) => {
         <div style={{ zIndex: "1000", overflow: "hidden" }}>
           <iframe
             style={{ width: "100vw", height: "100vh", border: "0" }}
-            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8100/" : "https://my-web-project-manage.vercel.app/"}
+            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8100/" : "https://manage.lezhi-music.xyz/"}
             allow="autoplay; microphone; midi"
           ></iframe>
         </div>
@@ -391,7 +391,7 @@ const Login = ({ loading, dispatch, login, user }) => {
         <div style={{ zIndex: "1000", overflow: "hidden" }}>
           <iframe
             style={{ width: "100vw", height: "100vh", border: "0" }}
-            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8200/" : "https://my-web-project-gepy.vercel.app/"}
+            src={process.env.NODE_ENV === "development" ? baseUrl + "http://localhost:8200/" : "https://gepy.lezhi-music.xyz/"}
             allow="autoplay; microphone; midi"
           ></iframe>
         </div>
