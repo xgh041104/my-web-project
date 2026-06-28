@@ -128,19 +128,19 @@ const LessonOutlinePreview = () => {
 
       wsRef.current.onmessage = (event) => {
         try {
-          const message = JSON.parse(event.data);
+          const wsMessage = JSON.parse(event.data);
 
-          if (message.header && message.header.code !== 0) {
+          if (wsMessage.header && wsMessage.header.code !== 0) {
             message.error(
-              `请求错误: ${message.header.code}, ${message.header.message}`,
+              `请求错误: ${wsMessage.header.code}, ${wsMessage.header.message}`,
             );
             setIsGenerating(false);
             wsRef.current.close();
             return;
           }
 
-          if (message.payload?.choices) {
-            const choices = message.payload.choices;
+          if (wsMessage.payload?.choices) {
+            const choices = wsMessage.payload.choices;
             const status = choices.status;
             const content = choices.text[0].content;
 
