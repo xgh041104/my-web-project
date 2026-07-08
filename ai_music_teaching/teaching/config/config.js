@@ -54,7 +54,7 @@ export default {
     },
     "/chatbot": {
       //聊天机器人接口请求
-      target: "https://spark-api-open.xf-yun.com/v2", // 服务端域名
+      target: "https://spark-api-open.xf-yun.com/v1", // 服务端域名
       changeOrigin: true, // 允许域名进行转换
       pathRewrite: { "^/chatbot": "" },
     },

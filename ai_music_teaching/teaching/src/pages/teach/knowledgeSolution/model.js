@@ -10,7 +10,7 @@ const InstanceAxios = axios.create({
   timeout: 60000, // 请求超时时间
   headers: {
     "Content-Type": "application/json",
-    Authorization: "Bearer YyTNOgJAfqphdAwFOZaV:MlgWxAiwkbjOgVCmLiMv",
+    Authorization: "Bearer qPjkqJPpDLqLPwdzVXcV:yrxubxlQyuVsypJqvayM",
   },
 });
 

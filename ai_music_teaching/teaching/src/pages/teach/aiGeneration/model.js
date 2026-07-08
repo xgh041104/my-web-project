@@ -6,7 +6,7 @@ const postAxiosJson = axios.create({
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
-    'Api-Key': 'ak_r4zutH356s5spvlh2b',
+    'Api-Key': 'ak_FLtCoKF6T5s3vWuB_6',
   },
 });
 
@@ -15,7 +15,7 @@ const postAxios = axios.create({
   timeout: 30000,
   headers: {
     'Content-Type': 'multipart/form-data',
-    'Api-Key': 'ak_r4zutH356s5spvlh2b',
+    'Api-Key': 'ak_FLtCoKF6T5s3vWuB_6',
   },
 });
 
@@ -40,7 +40,7 @@ export default {
   namespace: 'generation',
 
   state: {
-    apiKey: 'ak_r4zutH356s5spvlh2b',
+    apiKey: 'ak_FLtCoKF6T5s3vWuB_6',
     apiToken: ' ',
     taskId: ' ',
     editingOutline: '',

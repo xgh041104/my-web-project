@@ -15,7 +15,7 @@ const AttributeFilling = () => {
     audience: '大众',
     scene: '教学课件',
     lang: '简体中文',
-    apiKey: 'ak_r4zutH356s5spvlh2b',
+    apiKey: 'ak_FLtCoKF6T5s3vWuB_6',
     prompt: '',
     tokenHours: 2,
     usageLimit: null,
@@ -137,7 +137,7 @@ const AttributeFilling = () => {
       audience: formData.audience,
       scene: formData.scene,
       lang: formData.lang,
-      apiKey: 'ak_uMb6v9Fr65rE67egER',
+      apiKey: 'ak_FLtCoKF6T5s3vWuB_6',
       prompt: '大纲只需包含清晰教学目标、分步骤教学活动设计、师生互动环节、课时分配及效果评估方法。',
       tokenHours: 2,
       usageLimit: null

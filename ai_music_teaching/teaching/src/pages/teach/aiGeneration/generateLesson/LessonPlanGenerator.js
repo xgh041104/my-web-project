@@ -54,9 +54,9 @@ const LessonOutlinePreview = () => {
   const { totalTitle } = useSelector((state) => state.generation);
   let requirement = totalTitle || "";
 
-  const appid = "ab7fa246";
-  const apiSecret = "ZWE3ZjQ4ZDVkMjg4OTQ1ZmZmNzNhODM5";
-  const apiKey = "c58b62f0e9c8a80ab9969b4fc2a93a8a";
+  const appid = "293b806f";
+  const apiSecret = "M2QxZDIxNTBiYjU1MDFkNTBkMDNjYWFj";
+  const apiKey = "2be567689bb0eef123aacc6148a85f4c";
   const sparkUrl = "wss://spark-api.xf-yun.com/v4.0/chat";
   const domain = "4.0Ultra";
 

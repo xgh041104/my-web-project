@@ -70,7 +70,7 @@ function knowledgeSolution(props) {
     dispatch({
       type: 'knowledgeSolution/pushQuestion',
       payload: {
-        model: 'x1',
+        model: '4.0Ultra',
         user: 'user_123456',
         messages: [{
           role: 'user',
@@ -86,8 +86,8 @@ function knowledgeSolution(props) {
           type: "web_search",
           web_search: {
             enable: true,
+            show_ref_label: false,
             search_mode: "normal"
-            // search_mode: "deep"
           }
         }],
         signal: controller.signal,

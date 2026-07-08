@@ -29,7 +29,7 @@
     },
     {
       "source": "/chatbot/:match*",
-      "destination": "https://spark-api-open.xf-yun.com/v2/:match*"
+      "destination": "https://spark-api-open.xf-yun.com/v1/:match*"
     },
     {
       "source": "/docmee/:match*",
