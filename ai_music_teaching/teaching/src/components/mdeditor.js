@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MdEditor from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
 
@@ -18,11 +18,26 @@ export default function MarkDownEditor({ onFileUpload, value, onChange }) {
     }
   };
 
+  // 自动清理大模型流式输出或返回内容中包裹的 ```markdown ... ``` 标记，防止其渲染为黑底的单段代码块
+  const cleanValue = React.useMemo(() => {
+    if (!value) return "";
+    let clean = value.trim();
+    if (clean.startsWith("```markdown")) {
+      clean = clean.substring("```markdown".length);
+    } else if (clean.startsWith("```")) {
+      clean = clean.substring("```".length);
+    }
+    if (clean.endsWith("```")) {
+      clean = clean.substring(0, clean.length - 3);
+    }
+    return clean.trim();
+  }, [value]);
+
   return (
-    <div>
+    <div style={{ height: "100%" }}>
       <MdEditor
-        previewTheme="cyanosis"
-        modelValue={value}
+        previewTheme="default"
+        modelValue={cleanValue}
         onChange={onChange}
         autoDetectCode={true}
         theme="light"

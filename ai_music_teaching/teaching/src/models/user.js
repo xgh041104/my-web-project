@@ -2,6 +2,8 @@ import { history } from 'umi';
 import api from 'api';
 import { pathToRegexp } from 'path-to-regexp'
 import { getUserMedia } from 'utils/getUserMedia';
+import axios from 'axios';
+import { teachPrefix } from 'config';
 
 const { GetSystemTimeAPI } = api
 
@@ -27,6 +29,16 @@ export default {
     subscriptions: {
         // 只在第一次访问或者刷新浏览器时才触发此函数
         setup({ history, dispatch }, error) {
+            // 异步调用 Render 后端的 books 接口进行预热/唤醒，避免用户点击时因 cold start 等待过久
+            try {
+                console.log("应用初始化，正在后台预热唤醒 books 接口...");
+                axios.get(`${teachPrefix}/musicTeaching/books`)
+                    .then(res => console.log("books 接口预热成功:", res.status))
+                    .catch(err => console.log("books 接口预热已发送:", err.message));
+            } catch (e) {
+                console.warn("预热唤醒触发异常:", e);
+            }
+
             if (window?.electronAPI) {
                 window.electronAPI.send('get-mac-address');
                 window.electronAPI.receive('mac-address', (macAddress, event) => {

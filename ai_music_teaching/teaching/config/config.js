@@ -69,6 +69,10 @@ export default {
       changeOrigin: true, // 允许域名进行转换
       pathRewrite: { "^/musicTeaching": "" },
     },
+    "/subjectcourse": {
+      target: "http://47.113.223.219",
+      changeOrigin: true,
+    },
   },
   // devServer: {
   //   port:"8000",
