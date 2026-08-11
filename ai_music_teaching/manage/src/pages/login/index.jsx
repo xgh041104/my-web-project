@@ -120,7 +120,7 @@ const Login = ({ loading, dispatch, login
               <Col span={15}>
                 <Vertify
                   style={{ width: '100%', height: 'auto' }}
-                  imgUrl={hostAddr + "/SlideImg"}
+                  imgUrl={baseUrl + "/image/login/captcha_bg_2.png"}
                   onSuccess={verifySuccess}
                   onFail={verifyFailed}
                 // onRefresh={() => alert('refresh')}

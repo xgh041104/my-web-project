@@ -85,7 +85,7 @@ const Login = ({
               <br />
               <Vertify
                 width={220} height={100}
-                imgUrl={hostAddr + "/SlideImg?" + Math.floor(Math.random() * 100000)}
+                imgUrl={baseUrl + "/image/login/captcha_bg.png"}
                 onSuccess={() => { setVertify(true) }}
                 onFail={() => { setVertify(false) }}
               />
