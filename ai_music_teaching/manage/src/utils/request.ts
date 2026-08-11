@@ -61,6 +61,11 @@ export default function request(options: RequestOptions): Promise<Result> {
     ...options.headers,
     Authorization: window.sessionStorage.getItem('token') || '',
   };
+  
+  // 强制设置超时时间为 60 秒，防止大数据量查询被提前掐断
+  if (options.timeout === undefined) {
+    options.timeout = 60000;
+  }
 
   // formdata文件处理
   if (data && data.fileData) {

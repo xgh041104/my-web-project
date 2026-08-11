@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { ProTable } from '@ant-design/pro-components';
 import { PlusOutlined } from '@ant-design/icons';
 import { Button, Rate, Popconfirm, Typography, Modal } from 'antd';
@@ -17,6 +17,7 @@ const AddModal = () =>
 function QuestionList({ dispatch, questionList, adminSchoolId }) {
 
   const tableRef = useRef();
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   const pageState = usePageState("questionManage");
 
@@ -61,6 +62,10 @@ function QuestionList({ dispatch, questionList, adminSchoolId }) {
         ...pageState,
         defaultPageSize: 10,
         showQuickJumper: true,
+      }}
+      rowSelection={{
+        selectedRowKeys,
+        onChange: (keys) => setSelectedRowKeys(keys),
       }}
       columns={[
         {
@@ -163,7 +168,24 @@ function QuestionList({ dispatch, questionList, adminSchoolId }) {
         },
       ]}
       toolBarRender={() => [
-        AddModal(dispatch),
+        <Button
+          key="batchDelete"
+          danger
+          disabled={selectedRowKeys.length === 0}
+          onClick={() => {
+            Modal.confirm({
+              title: '确认批量删除?',
+              content: `确认删除选中的 ${selectedRowKeys.length} 项吗？`,
+              onOk: () => {
+                dispatch({ type: "questionManage/removeQuestion", payload: { QuestionIds: selectedRowKeys } });
+                setSelectedRowKeys([]);
+              }
+            });
+          }}
+        >
+          批量删除
+        </Button>,
+        AddModal(),
       ]}
       request={(params, sort, filter) => {
         return Promise.resolve({

@@ -110,21 +110,23 @@ function QuestionImport({ dispatch }) {
             message.error('请先校验题目');
             return;
         }
+
+        const hide = message.loading('正在批量导入题目并处理数据，耗时可能较长，请耐心等待...', 0);
         dispatch({
             type: "questionManage/importQuestionData",
             payload: validatedQuestions.current,
             callback: res => {
+                hide(); // 关闭 loading
                 if (res.code == 1) {
                     message.success('导入题目完成');
 
-                    const tableData = res.data.map((question, index) =>
-                        ({ id: "qustion" + index, ...question }))
-                    console.log('导入的题目数据', res, tableData);
-                    // setTimeout(() => setDataSource(tableData))
+                    console.log('后端返回导入结果:', res);
+                    // 前端本地直接将状态更新为“已导入”(Status: 1)
+                    setDataSource(prev => prev.map(item => ({...item, Status: 1})));
                     setErrorMessageDiv(<p style={{ color: "green" }}>导入完成！</p>);
                 }
                 else if (res.code == 0) {
-                    message.error('导入题目错误：', res.msg);
+                    message.error('导入题目错误：' + res.msg);
                 }
             }
         })
@@ -150,38 +152,51 @@ function QuestionImport({ dispatch }) {
 
 
             let Answer = rowData.Answer
-            if (rowData.QuestionType === 1) {
-                if (!rowData.Answer || rowData.Answer === "" || !parseInt(rowData.Answer)) {
-                    errorMessage.push(`第${index + 1}行答案设置有问题`)
+            try {
+                if (rowData.QuestionType === 1) {
+                    if (!rowData.Answer || rowData.Answer === "" || !parseInt(rowData.Answer)) {
+                        errorMessage.push(`第${index + 1}行答案设置有问题`)
+                    }
+                    else {
+                        Answer = String(parseInt(Answer) - 1)
+                    }
                 }
-                else {
-                    Answer = String(parseInt(Answer) - 1)
+                else if (rowData.QuestionType === 2) {
+                    if (!rowData.Answer || rowData.Answer === "") {
+                        errorMessage.push(`第${index + 1}行答案设置有问题`)
+                    } else {
+                        const parsed = JSON.parse(rowData.Answer);
+                        if (!Array.isArray(parsed) || parsed.every(i => !parseInt(i))) {
+                            errorMessage.push(`第${index + 1}行答案设置有问题`)
+                        } else {
+                            Answer = parsed.map(i => String(parseInt(i) - 1))
+                        }
+                    }
                 }
-            }
-            else if (rowData.QuestionType === 2) {
-                if (!rowData.Answer || rowData.Answer === "" || !Array.isArray(JSON.parse(rowData.Answer)) || JSON.parse(rowData.Answer).every(i => !parseInt(i))) {
-                    errorMessage.push(`第${index + 1}行答案设置有问题`)
+                else if (rowData.QuestionType === 3) {
+                    if (rowData.Answer == null || rowData.Answer === ""){
+                        errorMessage.push(`第${index + 1}行答案设置有问题`)
+                    }
+                    else {
+                        Answer = Answer.toString();
+                    }
                 }
-                else {
-                    Answer = JSON.parse(Answer).map(i => String(parseInt(i) - 1))
+                else if (rowData.QuestionType === 4) {
+                    if (!rowData.Answer || rowData.Answer === "") {
+                        errorMessage.push(`第${index + 1}行答案设置有问题`)
+                    } else {
+                        const parsed = JSON.parse(rowData.Answer);
+                        if (!Array.isArray(parsed)) {
+                            errorMessage.push(`第${index + 1}行答案设置有问题`)
+                        }
+                    }
                 }
-            }
-            else if (rowData.QuestionType === 3) {
-                // console.log('判断题答案', Answer);
-                if (rowData.Answer == null || rowData.Answer === ""){
-                    errorMessage.push(`第${index + 1}行答案设置有问题`)
+                else if (typeof rowData.QuestionType !== "number" || rowData.QuestionType > 5 || rowData.QuestionType < 1) {
+                    errorMessage.push(`第${index + 1}行题目类型设置有问题`)
                 }
-                else {
-                    Answer = Answer.toString();
-                }
-            }
-            else if (rowData.QuestionType === 4) {
-                if (!rowData.Answer || rowData.Answer === "" || !Array.isArray(JSON.parse(rowData.Answer))) {
-                    errorMessage.push(`第${index + 1}行答案设置有问题`)
-                }
-            }
-            else if (typeof rowData.QuestionType !== "number" || rowData.QuestionType > 5 || rowData.QuestionType < 1) {
-                errorMessage.push(`第${index + 1}行题目类型设置有问题`)
+            } catch (e) {
+                // JSON.parse 如果报错，说明答案格式严重错误，直接抛出红字提示
+                errorMessage.push(`第${index + 1}行答案设置有问题`)
             }
             return { ...rowData, Answer }
         })
