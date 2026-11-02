@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button, Modal, Input, notification, message, Select, Form } from 'antd';
-import { useSelector, useDispatch, history, connect } from 'umi';
+import { useSelector, useDispatch } from 'dva';
+import { history, connect } from 'umi';
 import './index.less';
 
 const RecorderControlled = ({

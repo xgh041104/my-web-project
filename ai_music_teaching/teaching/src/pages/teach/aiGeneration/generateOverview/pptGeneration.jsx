@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { Input, Button, Modal, Select, Card, Spin, message } from 'antd';
-import { useDispatch, useHistory, useSelector } from 'umi';
+import { useDispatch, useSelector } from 'dva';
+import { useHistory } from 'umi';
 import './attributeFilling.less';
 import { FileTextOutlined, CloudUploadOutlined } from '@ant-design/icons';
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useDispatch, useHistory } from 'umi';
+import { useDispatch } from 'dva';
+import { useLocation, useHistory } from 'umi';
 import { Image } from 'antd';
 import './pptTemplate.css';
 export default function PptTemplate(props) {

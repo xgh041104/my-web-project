@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MarkdownRenderer from './markdownRenderer_ppt';
 import { useHistory } from 'umi';
 import { message, Spin, notification, Modal, Input, Button } from 'antd';
-import { useDispatch, useSelector } from 'umi';
+import { useDispatch, useSelector } from 'dva';
 import styles from './pptOutlinePreview.less';
 
 const PptOutlinePreview = () => {

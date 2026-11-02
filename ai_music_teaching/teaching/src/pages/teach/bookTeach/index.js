@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Empty, Image } from 'antd';
-import { history, connect, useDispatch } from 'umi';
+import { useDispatch } from 'dva';
+import { history, connect } from 'umi';
 import './index.css';
 import { getFilePrefix, baseUrl } from '../../../utils/config';
 

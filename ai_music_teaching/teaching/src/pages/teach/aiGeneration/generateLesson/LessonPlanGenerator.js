@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import CryptoJS from "crypto-js";
 import { saveToWord } from "./docxUtils";
 import { Button, Modal, Input, message } from "antd";
-import { history, useSelector } from "umi";
+import { useSelector } from 'dva';
+import { history } from 'umi';
 import "./lessonOutlinePreview.css";
 import MarkDownEditor from "../../../../components/mdeditor";
 

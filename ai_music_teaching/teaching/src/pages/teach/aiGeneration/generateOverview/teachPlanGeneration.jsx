@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Checkbox, Button, Input, Divider, message, Tree } from 'antd';
 import styles from './syllabusGeneration.less';
 import { history } from 'umi';
-import { useDispatch, useSelector } from 'umi';
+import { useDispatch, useSelector } from 'dva';
 const { TextArea } = Input;
 
 export default function SyllabusGeneration() {

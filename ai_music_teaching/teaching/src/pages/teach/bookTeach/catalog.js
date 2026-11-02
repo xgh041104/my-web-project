@@ -4,7 +4,8 @@ import {
   CloseCircleOutlined, FilePdfFilled, FileExcelFilled,
   FileFilled, RightOutlined, DownOutlined, RollbackOutlined
 } from '@ant-design/icons';
-import { history, connect, useDispatch } from 'umi';
+import { useDispatch } from 'dva';
+import { history, connect } from 'umi';
 import { getFilePrefix, baseUrl } from 'config';
 
 import Toolbox from './_toolbox'

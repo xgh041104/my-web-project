@@ -8,7 +8,8 @@ import Piano from '../Piano';
 import Paint from '@/components/Paint';
 import CameraRecorder from '../Camera';
 import { midiSound, setInputCallback } from '../midiIO/midisound';
-import { history, useSelector } from 'umi';
+import { useSelector } from 'dva';
+import { history } from 'umi';
 import Metronome from '../Metronome';
 import RecorderControlled from '@/components/RecorderControlled';
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Image, message } from 'antd';
-import { useHistory, useSelector, useDispatch, history, connect } from 'umi';
+import { useSelector, useDispatch } from 'dva';
+import { useHistory, history, connect } from 'umi';
 import './bookPage.css';
 import { getFilePrefix } from 'config';
 import FileAnnexModal from './_fileAnnex';
