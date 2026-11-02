@@ -55,6 +55,12 @@ function BookTeach({ courseList }) {
 
   const dispatch = useDispatch();
 
+  React.useEffect(() => {
+    if (!courseList || courseList.length === 0) {
+      dispatch({ type: "course/fetchCourseList" });
+    }
+  }, [courseList, dispatch]);
+
   //查询到的课程列表，如果是管理员则全部归类为公共课程，如果是老师用户，则查询到的都算是校本课程
   courseList?.forEach(course => {
     if (course.courseType !== 0) {

@@ -19,42 +19,44 @@ export default {
   },
   effects: {
     *userLogin({ payload, callback }, { put, call, select }) {
-      let result = null;
       const { macAddress, registry, teacherInfo } = yield select(_ => _.user);
-      try {
-        result = yield call(loginUser, teacherInfo ? { ...payload, teacherId: teacherInfo.teacherId, accessToken: teacherInfo.accessToken } : { ...payload, hostMAC: macAddress, serialNum: payload.serialNum || registry });
-      }
-      catch (e) {
-        yield put({ type: "errorHandle", payload: e.message })
-        return;
-      }
-      console.log("登陆返回结果:", result);
+      const loginParams = teacherInfo 
+        ? { ...payload, teacherId: teacherInfo.teacherId, accessToken: teacherInfo.accessToken } 
+        : { ...payload, hostMAC: macAddress, serialNum: payload.serialNum || registry };
 
-      if (result.code !== 0) {
-        yield put({ type: "errorHandle", payload: result.message })
-      }
-      else {
-        // 获取token
-        let res;
-        try {
-          res = yield call(getToken);
-        }
-        catch (e) {
-          yield put({ type: "errorHandle", payload: e.message })
+      try {
+        // 并行发起登录与获取曲谱Token，将耗时从串行相加缩减为单次往返
+        const [loginRes, tokenRes] = yield Promise.all([
+          loginUser(loginParams),
+          getToken().catch(err => {
+            console.warn("曲谱token非关键接口获取异常:", err);
+            return { data: { code: 200, data: { token: "" } } };
+          })
+        ]);
+
+        const result = loginRes;
+        console.log("登陆返回结果:", result);
+
+        if (!result || result.code !== 0) {
+          yield put({ type: "errorHandle", payload: result ? result.message : "登录失败" });
           return;
         }
-        console.log("获取token返回结果:", res);
-        if (res.data.code != 200) {
-          yield put({ type: "errorHandle", payload: res.msg })
-          return;
+
+        if (tokenRes?.data?.data?.token) {
+          window.sessionStorage.setItem("accessToken", tokenRes.data.data.token);
         }
-        window.sessionStorage.setItem("accessToken", res.data.data.token);
-        const { schoolId, ...resultData } = result.data;
+
+        const { schoolId, ...resultData } = result.data || {};
         if (payload.remember) {
           window.localStorage.setItem("userInfo", JSON.stringify({ userAccount: payload.userAccount, userPwd: payload.userPwd }));
         } else {
           window.localStorage.removeItem("userInfo");
         }
+
+        // 同步直接存入 sessionStorage，消除异步 put 的竞态导致后续页面请求拿不到 token
+        window.sessionStorage.setItem("token", result.token || "");
+        window.sessionStorage.setItem("userInfo", JSON.stringify({ ...resultData, schoolId: schoolId || 0 }));
+
         yield put({
           type: "user/updateUser",
           payload: {
@@ -64,24 +66,28 @@ export default {
         });
 
         if (!registry && window?.electronAPI) {
-          window.electronAPI?.send("set-registry", payload.serialNum)
+          window.electronAPI?.send("set-registry", payload.serialNum);
           window.electronAPI?.send('get-registry');
           window.electronAPI?.receive('registry-value', (data, event) => {
             if (data) {
               dispatch({ type: "user/updateRegistry", payload: data });
             }
-          })
+          });
         }
+
         history.push("/teach/bookTeach");
-        if (!teacherInfo) {
+        if (!teacherInfo && result.data) {
           const userInfo = {
             serialNum: payload.serialNum || registry,
             teacherId: result.data.userId,
             accessToken: result.data.accessToken
-          }
+          };
           window?.electronAPI?.send('teacher-login', userInfo);
         }
         message.success("登录成功！", 1);
+      } catch (e) {
+        yield put({ type: "errorHandle", payload: e.message });
+        return;
       }
     },
   },

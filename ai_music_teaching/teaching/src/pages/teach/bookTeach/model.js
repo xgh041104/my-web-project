@@ -24,6 +24,9 @@ export default {
 
   subscriptions: {
     setupHistory({ dispatch, history }) {  // eslint-disable-line
+      if (history.location.pathname === '/teach/bookTeach') {
+        dispatch({ type: 'fetchCourseList' });
+      }
       return history.listen(({ pathname, state }) => {
         if (pathname === '/teach/bookTeach') {
           dispatch({ type: 'fetchCourseList' });
@@ -53,8 +56,19 @@ export default {
 
   effects: {
     * fetchCourseList({ }, { call, put, select }) {
-      const { userType, userId, schoolId } = yield select(_ => _.user.userInfo);
-      let queryParam = { schoolId: 0 }
+      let userInfo = yield select(_ => _.user.userInfo);
+      if (!userInfo || userInfo.userId <= 0) {
+        try {
+          const stored = window.sessionStorage.getItem("userInfo");
+          if (stored) {
+            userInfo = JSON.parse(stored);
+          }
+        } catch (e) {}
+      }
+      const userType = userInfo?.userType;
+      const userId = userInfo?.userId;
+      const schoolId = userInfo?.schoolId;
+      let queryParam = { schoolId: 0 };
       if (userType === 2) { // 用户
         queryParam = { schoolId: schoolId || 0, lecturerCommonUserId: userId };
       }
@@ -62,11 +76,11 @@ export default {
         queryParam = { schoolId: schoolId || 0 };
       }
       const result = yield call(queryCourse, queryParam);
-      if (result.code === 0) {
-        yield put({ type: 'updateState', payload: { courseList: result.data } })
+      if (result && result.code === 0) {
+        yield put({ type: 'updateState', payload: { courseList: result.data } });
       }
-      else {
-        message.error(result.message, 3)
+      else if (result) {
+        message.error(result.message || "获取教材列表失败", 3);
       }
     },
     *fetchCourseClassify(action, { call, put, select }) {  // eslint-disable-line
