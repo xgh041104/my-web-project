@@ -37,20 +37,36 @@ function getKey(): string {
   return newKey;
 }
 
+
+const renderTabComponent = (routePath: string, defaultChild: React.ReactNode) => {
+  switch (routePath) {
+    case "/teach/bookTeach":
+      return defaultChild;
+    case "/teach/musicTheory":
+      return <MusicTheory />;
+    case "/teach/rhythm":
+      return <Rhythm />;
+    case "/teach/songMaker1":
+      return <SongMaker1 />;
+    case "/teach/aiCreateMusic":
+      return <CreateMusic />;
+    case "/teach/videoSummary":
+      return <VideoSummary />;
+    case "/teach/aiGeneration":
+      return <AIGeneration />;
+    case "/teach/knowledgeSolution":
+      return <KnowledgeSolution />;
+    default:
+      return defaultChild;
+  }
+};
+
 function KeepAliveTabs({ children }: Props) {
   const history = useHistory();
   const { pathname, state } = useLocation();
   const { moduleInfo } = state || {};
 
-  const childrens: React.ReactNode[] = [
-    <MusicTheory />,
-    <Rhythm />,
-    <SongMaker1 />,
-    <CreateMusic />,
-    <VideoSummary />,
-    <AIGeneration />,
-    <KnowledgeSolution />,
-  ]
+  
 
   const [tabItems, setTabItems] = useState<TabProps[]>([
     {
@@ -66,7 +82,7 @@ function KeepAliveTabs({ children }: Props) {
       title: `乐理教学`,
       pathname: "/teach/musicTheory",
       routePath: "/teach/musicTheory",
-      children: childrens[0],
+      children: null,
       state
     },
     {
@@ -74,7 +90,7 @@ function KeepAliveTabs({ children }: Props) {
       title: `节奏教学`,
       pathname: "/teach/rhythm",
       routePath: "/teach/rhythm",
-      children: childrens[1],
+      children: null,
       state
     },
     {
@@ -82,7 +98,7 @@ function KeepAliveTabs({ children }: Props) {
       title: `旋律创编`,
       pathname: "/teach/songMaker1",
       routePath: "/teach/songMaker1",
-      children: childrens[2],
+      children: null,
       state
     },
     {
@@ -90,7 +106,7 @@ function KeepAliveTabs({ children }: Props) {
       title: `AI谱曲`,
       pathname: "/teach/aiCreateMusic",
       routePath: "/teach/aiCreateMusic",
-      children: childrens[3],
+      children: null,
       state
     },
     {
@@ -98,7 +114,7 @@ function KeepAliveTabs({ children }: Props) {
       title: `视频总结`,
       pathname: "/teach/videoSummary",
       routePath: "/teach/videoSummary",
-      children: childrens[4],
+      children: null,
       state
     },
     {
@@ -106,7 +122,7 @@ function KeepAliveTabs({ children }: Props) {
       title: `生成教案`,
       pathname: "/teach/aiGeneration",
       routePath: "/teach/aiGeneration",
-      children: childrens[5],
+      children: null,
       state
     },
     {
@@ -114,12 +130,24 @@ function KeepAliveTabs({ children }: Props) {
       title: `知识问答`,
       pathname: "/teach/knowledgeSolution",
       routePath: "/teach/knowledgeSolution",
-      children: childrens[6],
+      children: null,
       state
     },
   ])
 
   const [activeKey, setActiveKey] = useState("/teach/bookTeach");
+
+  const [visitedTabs, setVisitedTabs] = useState<Record<string, boolean>>(() => {
+    const current = pathname && pathname.startsWith('/teach/') ? pathname : '/teach/bookTeach';
+    return { [current]: true, '/teach/bookTeach': true };
+  });
+
+  useEffect(() => {
+    if (activeKey) {
+      setVisitedTabs(prev => prev[activeKey] ? prev : { ...prev, [activeKey]: true });
+    }
+  }, [activeKey]);
+
 
   useEffect(() => {
     const pathList = splitPathname(pathname);
@@ -160,17 +188,20 @@ function KeepAliveTabs({ children }: Props) {
   }, [pathname])
 
   const tabPanes = React.useMemo(() => {
-    // console.log("子组件", tabItems);
-    return tabItems.map((p: TabProps, index: number) =>
-      <Tabs.TabPane tab={p.title} key={p.routePath} >
-        <div key={p.key} style={{
-          width: '100vw',
-          margin: 'auto',
-        }}>
-          {p.children}
-        </div>
-      </Tabs.TabPane >)
-  }, [tabItems])
+    return tabItems.map((p: TabProps) => {
+      const isVisited = visitedTabs[p.routePath];
+      return (
+        <Tabs.TabPane tab={p.title} key={p.routePath} >
+          <div key={p.key} style={{
+            width: '100vw',
+            margin: 'auto',
+          }}>
+            {isVisited ? renderTabComponent(p.routePath, p.children) : null}
+          </div>
+        </Tabs.TabPane >
+      );
+    });
+  }, [tabItems, visitedTabs])
 
   // 切换tab
   const changeTab = (routePath: string) => {
