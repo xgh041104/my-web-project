@@ -42,5 +42,8 @@
     "redux-logger": "^3.0.6",
     "sql.js": "^1.13.0",
     "styled-components": "^5.3.6"
+  },
+  "engines": {
+    "node": "26.x"
   }
 }

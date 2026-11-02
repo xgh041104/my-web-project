@@ -39,3 +39,6 @@ screenshot
 .eslintcache
 
 build
+
+# Allow public assets
+!**/public/**
