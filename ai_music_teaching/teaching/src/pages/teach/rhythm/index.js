@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { baseUrl } from 'config'
 
 export default function Rhythm() {
 
@@ -10,7 +11,7 @@ export default function Rhythm() {
       fontWeight: '600',
     }}>节奏教学</div>
     <iframe style={{ width: '97vw', height: '90vh', border: '0' }}
-      src='https://ebarotech.cn/googlerhythm/Rhythm.html'
+      src={baseUrl + '/rhythm/index.html'}
       allow='autoplay; microphone; midi'
     >
 

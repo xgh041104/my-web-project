@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<base href="./">
+	<title>旋律创编 - 乐智课堂</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="icon" href="images/favicon.png" type="image/png">
+	<style>
+		body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+	</style>
+</head>
+<body>
+	<div id="incompatible" style="display: none; text-align: center; ">
+		<div class="wrapper" style="padding: 20px;">
+			<img src="images/page-incompatible.svg">
+			<p>当前浏览器暂不支持音频引擎，推荐使用 Chrome 浏览器打开。</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var fallbackEl = document.getElementById('incompatible');
+		if (!(window.AudioContext || window.webkitAudioContext)) {
+			fallbackEl.style.display = 'flex';
+		}
+	</script>
+	<script src="build/Main.js" charset="utf-8"></script>
+</body>
+</html>
