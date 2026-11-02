@@ -11,14 +11,14 @@ export default function MarkDownEditor({ onFileUpload, value, onChange }) {
           callback([{ url: url }]);
         })
         .catch((error) => {
-          console.error("上传错误:", error);
+          console.error("上传失败:", error);
         });
     } else {
-      console.error("未定义文件上传函数");
+      console.error("未传递文件上传函数");
     }
   };
 
-  // 自动清理大模型流式输出或返回内容中包裹的 ```markdown ... ``` 标记，防止其渲染为黑底的单段代码块
+  // 自动清理大模型返回内容中可能包含的 ```markdown ... ``` 标记，防止渲染为黑底的单行代码块
   const cleanValue = React.useMemo(() => {
     if (!value) return "";
     let clean = value.trim();

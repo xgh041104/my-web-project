@@ -1,10 +1,13 @@
-import React from 'react'
-import GenerateOverview from './generateOverview/_layout'
+import React from 'react';
+import GenerateOverview from './generateOverview/_layout';
+import SyllabusGeneration from './generateOverview/syllabusGeneration';
 
-export default function index() {
+export default function index({ children }) {
   return (
     <div>
-      <GenerateOverview />
+      <GenerateOverview>
+        {children || <SyllabusGeneration />}
+      </GenerateOverview>
     </div>
-  )
+  );
 }

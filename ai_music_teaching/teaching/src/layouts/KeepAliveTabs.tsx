@@ -53,7 +53,7 @@ const renderTabComponent = (routePath: string, defaultChild: React.ReactNode) =>
     case "/teach/videoSummary":
       return <VideoSummary />;
     case "/teach/aiGeneration":
-      return <AIGeneration />;
+      return defaultChild || <AIGeneration />;
     case "/teach/knowledgeSolution":
       return <KnowledgeSolution />;
     default:
@@ -120,7 +120,7 @@ function KeepAliveTabs({ children }: Props) {
     {
       key: getKey() + 6,
       title: `生成教案`,
-      pathname: "/teach/aiGeneration",
+      pathname: "/teach/aiGeneration/generateOverview/syllabusGeneration",
       routePath: "/teach/aiGeneration",
       children: null,
       state
@@ -210,7 +210,7 @@ function KeepAliveTabs({ children }: Props) {
     if (!targetTab) {
       return;
     }
-    history.push({ pathname: targetTab.routePath, state: targetTab.state });
+    history.push({ pathname: targetTab.pathname || targetTab.routePath, state: targetTab.state });
     // setActiveKey(routePath); // 更新 activeKey 为 pathname
   }
 
